@@ -8,7 +8,7 @@ export async function POST(request: NextRequest) {
     const data = await request.json();
 
     // Validate required fields
-    const requiredFields = ['name', 'date_of_birth', 'place_of_birth', 'time_of_birth', 'gender', 'description', 'additional_info', 'conclusion', 'final_notes', 'image'];
+    const requiredFields = ['name', 'date_of_birth', 'place_of_birth', 'time_of_birth', 'gender'];
     for (const field of requiredFields) {
       if (!data[field]) {
         return NextResponse.json({ error: `Missing required field: ${field}` }, { status: 400 });
@@ -18,9 +18,24 @@ export async function POST(request: NextRequest) {
     // Read HTML template
     const htmlPath = path.join(process.cwd(), 'app/lib/career/pdf.html');
     const cssPath = path.join(process.cwd(), 'app/lib/career/pdf.css');
+    const imagePath = path.join(process.cwd(), 'public/coverpage.png');
+    const headerImagePath = path.join(process.cwd(), 'public/header.png');
 
     let htmlContent = fs.readFileSync(htmlPath, 'utf-8');
-    const cssContent = fs.readFileSync(cssPath, 'utf-8');
+    let cssContent = fs.readFileSync(cssPath, 'utf-8');
+
+    // Read and convert cover image to base64
+    const imageBuffer = fs.readFileSync(imagePath);
+    const imageBase64 = imageBuffer.toString('base64');
+    const imageDataUrl = `data:image/png;base64,${imageBase64}`;
+
+    // Read and convert header image to base64
+    const headerImageBuffer = fs.readFileSync(headerImagePath);
+    const headerImageBase64 = headerImageBuffer.toString('base64');
+    const headerImageDataUrl = `data:image/png;base64,${headerImageBase64}`;
+
+    // Replace the background image path in CSS with data URL
+    cssContent = cssContent.replace('../../../public/cover.png', imageDataUrl);
 
     // Function to format text content with paragraphs
     const formatContent = (text: string) => {
@@ -35,11 +50,12 @@ export async function POST(request: NextRequest) {
     htmlContent = htmlContent.replace(/\{\{place_of_birth\}\}/g, data.place_of_birth);
     htmlContent = htmlContent.replace(/\{\{time_of_birth\}\}/g, data.time_of_birth);
     htmlContent = htmlContent.replace(/\{\{gender\}\}/g, data.gender);
-    htmlContent = htmlContent.replace(/\{\{description\}\}/g, formatContent(data.description));
-    htmlContent = htmlContent.replace(/\{\{additional_info\}\}/g, formatContent(data.additional_info));
-    htmlContent = htmlContent.replace(/\{\{conclusion\}\}/g, formatContent(data.conclusion));
-    htmlContent = htmlContent.replace(/\{\{final_notes\}\}/g, formatContent(data.final_notes));
-    htmlContent = htmlContent.replace(/\{\{image\}\}/g, data.image);
+
+    // Replace cover image placeholder in CSS
+    cssContent = cssContent.replace('{{cover_image}}', imageDataUrl);
+
+    // Replace header image placeholder in HTML
+    htmlContent = htmlContent.replace(/\{\{header_image\}\}/g, headerImageDataUrl);
 
     // Inline CSS into HTML
     const fullHtml = htmlContent.replace('<link rel="stylesheet" href="./pdf.css">', `<style>${cssContent}</style>`);
@@ -52,13 +68,15 @@ export async function POST(request: NextRequest) {
     await page.setContent(fullHtml, { waitUntil: 'networkidle' });
 
     const pdfBuffer = await page.pdf({
-      format: 'A4',
+      width: '210mm',
+      height: '297mm',
       printBackground: true,
+      preferCSSPageSize: true,
       margin: {
-        top: '1in',
-        right: '1in',
-        bottom: '1in',
-        left: '1in'
+        top: '0mm',
+        right: '0mm',
+        bottom: '0mm',
+        left: '0mm'
       }
     });
 
