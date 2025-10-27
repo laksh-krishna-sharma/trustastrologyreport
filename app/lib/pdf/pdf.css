@@ -1,0 +1,70 @@
+@page {
+    size: A4;
+    margin: 1in;
+}
+
+body {
+    font-family: 'Times New Roman', serif;
+    font-size: 12pt;
+    line-height: 1.5;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.page {
+    page-break-after: always;
+    min-height: 100vh;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 2rem;
+    border-bottom: 2px solid #333;
+    padding-bottom: 1rem;
+}
+
+.header h1 {
+    font-size: 24pt;
+    margin: 0;
+    color: #2c3e50;
+}
+
+.content {
+    margin-top: 2rem;
+}
+
+.content h2 {
+    font-size: 18pt;
+    color: #34495e;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #bdc3c7;
+    padding-bottom: 0.5rem;
+}
+
+.info-section {
+    background-color: #f8f9fa;
+    padding: 1rem;
+    border-radius: 5px;
+    border: 1px solid #dee2e6;
+}
+
+.info-section p {
+    margin: 0.5rem 0;
+    font-size: 14pt;
+}
+
+.info-section strong {
+    color: #495057;
+}
+
+.content p {
+    text-align: justify;
+    margin-bottom: 1rem;
+    font-size: 12pt;
+}
+
+/* Ensure proper spacing */
+.page:last-child {
+    page-break-after: avoid;
+}
