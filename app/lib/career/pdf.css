@@ -107,3 +107,17 @@ body {
 .page:last-child {
     page-break-after: avoid;
 }
+
+/* Chart image styling */
+.chart-image {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.chart-image img {
+    max-width: 100%;
+    max-height: 70vh;
+    height: auto;
+    border: 1px solid #bdc3c7;
+    border-radius: 5px;
+}

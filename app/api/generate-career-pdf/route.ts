@@ -8,7 +8,7 @@ export async function POST(request: NextRequest) {
     const data = await request.json();
 
     // Validate required fields
-    const requiredFields = ['name', 'date_of_birth', 'place_of_birth', 'time_of_birth', 'gender', 'description', 'additional_info', 'conclusion', 'final_notes'];
+    const requiredFields = ['name', 'date_of_birth', 'place_of_birth', 'time_of_birth', 'gender', 'description', 'additional_info', 'conclusion', 'final_notes', 'image'];
     for (const field of requiredFields) {
       if (!data[field]) {
         return NextResponse.json({ error: `Missing required field: ${field}` }, { status: 400 });
@@ -16,8 +16,8 @@ export async function POST(request: NextRequest) {
     }
 
     // Read HTML template
-    const htmlPath = path.join(process.cwd(), 'app/lib/pdf/pdf.html');
-    const cssPath = path.join(process.cwd(), 'app/lib/pdf/pdf.css');
+    const htmlPath = path.join(process.cwd(), 'app/lib/career/pdf.html');
+    const cssPath = path.join(process.cwd(), 'app/lib/career/pdf.css');
 
     let htmlContent = fs.readFileSync(htmlPath, 'utf-8');
     const cssContent = fs.readFileSync(cssPath, 'utf-8');
@@ -39,6 +39,7 @@ export async function POST(request: NextRequest) {
     htmlContent = htmlContent.replace(/\{\{additional_info\}\}/g, formatContent(data.additional_info));
     htmlContent = htmlContent.replace(/\{\{conclusion\}\}/g, formatContent(data.conclusion));
     htmlContent = htmlContent.replace(/\{\{final_notes\}\}/g, formatContent(data.final_notes));
+    htmlContent = htmlContent.replace(/\{\{image\}\}/g, data.image);
 
     // Inline CSS into HTML
     const fullHtml = htmlContent.replace('<link rel="stylesheet" href="./pdf.css">', `<style>${cssContent}</style>`);
