@@ -8,7 +8,7 @@ export async function POST(request: NextRequest) {
     const data = await request.json();
 
     // Validate required fields
-    const requiredFields = ['name', 'date_of_birth', 'place_of_birth', 'time_of_birth', 'gender'];
+    const requiredFields = ['name', 'date_of_birth', 'place_of_birth', 'time_of_birth', 'gender', 'description', 'additional_info', 'conclusion', 'final_notes'];
     for (const field of requiredFields) {
       if (!data[field]) {
         return NextResponse.json({ error: `Missing required field: ${field}` }, { status: 400 });
@@ -22,12 +22,23 @@ export async function POST(request: NextRequest) {
     let htmlContent = fs.readFileSync(htmlPath, 'utf-8');
     const cssContent = fs.readFileSync(cssPath, 'utf-8');
 
+    // Function to format text content with paragraphs
+    const formatContent = (text: string) => {
+      if (!text) return '';
+      // Replace double newlines with paragraph breaks
+      return '<p>' + text.replace(/\n\n/g, '</p><p>').replace(/\n/g, '<br>') + '</p>';
+    };
+
     // Replace placeholders with actual data
     htmlContent = htmlContent.replace(/\{\{name\}\}/g, data.name);
     htmlContent = htmlContent.replace(/\{\{date_of_birth\}\}/g, data.date_of_birth);
     htmlContent = htmlContent.replace(/\{\{place_of_birth\}\}/g, data.place_of_birth);
     htmlContent = htmlContent.replace(/\{\{time_of_birth\}\}/g, data.time_of_birth);
     htmlContent = htmlContent.replace(/\{\{gender\}\}/g, data.gender);
+    htmlContent = htmlContent.replace(/\{\{description\}\}/g, formatContent(data.description));
+    htmlContent = htmlContent.replace(/\{\{additional_info\}\}/g, formatContent(data.additional_info));
+    htmlContent = htmlContent.replace(/\{\{conclusion\}\}/g, formatContent(data.conclusion));
+    htmlContent = htmlContent.replace(/\{\{final_notes\}\}/g, formatContent(data.final_notes));
 
     // Inline CSS into HTML
     const fullHtml = htmlContent.replace('<link rel="stylesheet" href="./pdf.css">', `<style>${cssContent}</style>`);

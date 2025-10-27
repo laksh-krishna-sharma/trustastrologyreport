@@ -64,6 +64,45 @@ body {
     font-size: 12pt;
 }
 
+.dynamic-content {
+    text-align: justify;
+    font-size: 12pt;
+    line-height: 1.5;
+}
+
+.dynamic-content p {
+    margin-bottom: 1rem;
+    text-align: justify;
+}
+
+/* Table styles for index */
+.index-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+.index-table th,
+.index-table td {
+    border: 1px solid #bdc3c7;
+    padding: 0.75rem;
+    text-align: left;
+}
+
+.index-table th {
+    background-color: #f8f9fa;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+.index-table td {
+    background-color: #ffffff;
+}
+
+.index-table tr:nth-child(even) td {
+    background-color: #f8f9fa;
+}
+
 /* Ensure proper spacing */
 .page:last-child {
     page-break-after: avoid;
