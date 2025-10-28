@@ -10,32 +10,36 @@ export function loadAstrologicalDetails(astroDetails: any, headerImageDataUrl: s
   const staticSection = astroDetails.static ?? {};
   const dailySection = astroDetails.daily ?? {};
 
-  const identityRows = renderKeyValueRows([
-    { label: 'Ascendant', value: staticSection.ascendant },
-    { label: 'Nakshatra', value: staticSection.nakshatra },
-    { label: 'Nakshatra Lord', value: staticSection.nakshatraLord },
-    { label: 'Nakshatra Pada', value: staticSection.nakshatraPada },
-    { label: 'Kaalsarp Dosha', value: sanitizeBulletPrefix(staticSection.kaalsarpDosha) },
-    { label: 'Pitra Dosha', value: staticSection.pitraDosha },
-    { label: 'Mangal Dosha', value: sanitizeBulletPrefix(staticSection.mangalDosha), variant: 'astro-row--center' },
-  ]);
+  const identityRows = renderKeyValueRows(
+    [
+      { label: 'Ascendant', value: staticSection.ascendant },
+      { label: 'Nakshatra', value: staticSection.nakshatra },
+      { label: 'Nakshatra Lord', value: staticSection.nakshatraLord },
+      { label: 'Nakshatra Pada', value: staticSection.nakshatraPada },
+      { label: 'Kaalsarp Dosha', value: sanitizeBulletPrefix(staticSection.kaalsarpDosha) },
+      { label: 'Pitra Dosha', value: staticSection.pitraDosha },
+      { label: 'Mangal Dosha', value: sanitizeBulletPrefix(staticSection.mangalDosha), variant: 'astro-row--center' },
+    ].filter((row) => row.value !== undefined && row.value !== null && `${row.value}`.trim() !== '')
+  );
 
-  const dailyRows = renderKeyValueRows([
-    { label: 'Lucky Color', value: dailySection.luckyColor },
-    { label: 'Lucky Numbers', value: formatLuckyNumbers(dailySection.luckyNumbers) },
-    {
-      label: 'Current Mahadasha',
-      value: dailySection.currentMahadasha ?? staticSection.mahadasha?.[0]?.Mahadasha,
-    },
-    { label: 'Current Antardasha', value: dailySection.currentAntardasha },
-    { label: 'Current Paryantardasha', value: dailySection.currentParyantardasha },
-    { label: 'Current Shooksamadasha', value: dailySection.currentShookshamadasha },
-    { label: 'Current Pranadasha', value: dailySection.currentPranadasha },
-    { label: 'Shani Transit', value: dailySection.shaniPeriodType },
-  ]);
+  const dailyRows = renderKeyValueRows(
+    [
+      { label: 'Lucky Color', value: dailySection.luckyColor },
+      { label: 'Lucky Numbers', value: formatLuckyNumbers(dailySection.luckyNumbers) },
+      {
+        label: 'Current Mahadasha',
+        value: dailySection.currentMahadasha ?? staticSection.mahadasha?.[0]?.Mahadasha,
+      },
+      { label: 'Current Antardasha', value: dailySection.currentAntardasha },
+      { label: 'Current Paryantardasha', value: dailySection.currentParyantardasha },
+      { label: 'Current Shooksamadasha', value: dailySection.currentShookshamadasha },
+      { label: 'Current Pranadasha', value: dailySection.currentPranadasha },
+      { label: 'Shani Transit', value: dailySection.shaniPeriodType },
+    ].filter((row) => row.value !== undefined && row.value !== null && `${row.value}`.trim() !== '')
+  );
 
   const mahadashaRows = renderTimelineRows(
-    Array.isArray(staticSection.mahadasha) ? staticSection.mahadasha.slice(0, 4) : undefined,
+    Array.isArray(staticSection.mahadasha) ? staticSection.mahadasha : undefined,
     [
       { key: 'Mahadasha', label: 'Mahadasha' },
       { key: 'Start Date', label: 'Starts' },
@@ -45,7 +49,7 @@ export function loadAstrologicalDetails(astroDetails: any, headerImageDataUrl: s
   );
 
   const antardashaRows = renderTimelineRows(
-    Array.isArray(staticSection.antardasha) ? staticSection.antardasha.slice(0, 6) : undefined,
+    Array.isArray(staticSection.antardasha) ? staticSection.antardasha : undefined,
     [
       { key: 'Antardasha', label: 'Antardasha' },
       { key: 'Start Date', label: 'Starts' },
