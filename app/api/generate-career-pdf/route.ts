@@ -16,13 +16,21 @@ export async function POST(request: NextRequest) {
     }
 
     // Read HTML template
-    const htmlPath = path.join(process.cwd(), 'app/lib/career/pdf.html');
-    const cssPath = path.join(process.cwd(), 'app/lib/career/pdf.css');
+  const htmlPath = path.join(process.cwd(), 'app/lib/career/pdf.html');
+  const cssPath = path.join(process.cwd(), 'app/lib/career/pdf.css');
+  const disclaimerCssPath = path.join(process.cwd(), 'app/lib/career/disclaimer/disclaimer.css');
+  const tableOfContentCssPath = path.join(process.cwd(), 'app/lib/career/table_of_content/table_of_content.css');
+    const disclaimerPath = path.join(process.cwd(), 'app/lib/career/disclaimer/disclaimer.html');
+    const tableOfContentPath = path.join(process.cwd(), 'app/lib/career/table_of_content/table_of_content.html');
     const imagePath = path.join(process.cwd(), 'public/coverpage.png');
     const headerImagePath = path.join(process.cwd(), 'public/header.png');
 
     let htmlContent = fs.readFileSync(htmlPath, 'utf-8');
-    let cssContent = fs.readFileSync(cssPath, 'utf-8');
+  let cssContent = fs.readFileSync(cssPath, 'utf-8');
+  const disclaimerCss = fs.readFileSync(disclaimerCssPath, 'utf-8');
+  const tableOfContentCss = fs.readFileSync(tableOfContentCssPath, 'utf-8');
+    let disclaimerContent = fs.readFileSync(disclaimerPath, 'utf-8');
+    let tableOfContentContent = fs.readFileSync(tableOfContentPath, 'utf-8');
 
     // Read and convert cover image to base64
     const imageBuffer = fs.readFileSync(imagePath);
@@ -34,8 +42,9 @@ export async function POST(request: NextRequest) {
     const headerImageBase64 = headerImageBuffer.toString('base64');
     const headerImageDataUrl = `data:image/png;base64,${headerImageBase64}`;
 
-    // Replace the background image path in CSS with data URL
-    cssContent = cssContent.replace('../../../public/cover.png', imageDataUrl);
+  // Replace the background image path in CSS with data URL
+  cssContent = cssContent.replace('../../../public/cover.png', imageDataUrl);
+  cssContent = `${cssContent}\n${disclaimerCss}\n${tableOfContentCss}`;
 
     // Function to format text content with paragraphs
     const formatContent = (text: string) => {
@@ -54,8 +63,15 @@ export async function POST(request: NextRequest) {
     // Replace cover image placeholder in CSS
     cssContent = cssContent.replace('{{cover_image}}', imageDataUrl);
 
-    // Replace header image placeholder in HTML
-    htmlContent = htmlContent.replace(/\{\{header_image\}\}/g, headerImageDataUrl);
+  // Replace header image placeholder wherever it appears
+  const replaceHeaderImage = (content: string) => content.replace(/\{\{header_image\}\}/g, headerImageDataUrl);
+  htmlContent = replaceHeaderImage(htmlContent);
+  disclaimerContent = replaceHeaderImage(disclaimerContent);
+  tableOfContentContent = replaceHeaderImage(tableOfContentContent);
+
+    // Replace modular content placeholders
+    htmlContent = htmlContent.replace(/\{\{disclaimer_content\}\}/g, disclaimerContent);
+    htmlContent = htmlContent.replace(/\{\{table_of_content\}\}/g, tableOfContentContent);
 
     // Inline CSS into HTML
     const fullHtml = htmlContent.replace('<link rel="stylesheet" href="./pdf.css">', `<style>${cssContent}</style>`);
