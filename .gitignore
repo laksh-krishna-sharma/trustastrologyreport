@@ -2,6 +2,7 @@
 
 # dependencies
 files/
+data/
 /node_modules
 .pnpm-store/
 /.pnp

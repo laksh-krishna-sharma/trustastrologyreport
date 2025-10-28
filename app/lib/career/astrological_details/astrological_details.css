@@ -1,0 +1,244 @@
+/* Astrological details styling */
+.astro-content {
+    padding: 1.8rem 2rem 2.4rem;
+    min-height: calc(100% - 3rem);
+    margin: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.astro-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    margin-bottom: 0.5rem;
+}
+
+.astro-header h2 {
+    margin: 0;
+    font-size: 24pt;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    color: #2c3e50;
+    white-space: nowrap;
+}
+
+.astro-section {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.astro-section h3 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    font-size: 16pt;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: #324a5f;
+}
+
+.astro-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 0.9rem;
+}
+
+.astro-row {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    padding: 1rem 1.1rem;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.92);
+    box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+    align-items: center;
+    text-align: center;
+}
+
+.astro-label {
+    font-size: 11pt;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #6c7a89;
+}
+
+.astro-value {
+    font-size: 15pt;
+    font-weight: 600;
+    color: #1f2d3d;
+    line-height: 1.4;
+}
+
+.astro-row--center {
+    grid-column: 1 / -1;
+    max-width: 360px;
+    justify-self: center;
+}
+
+.energy-section {
+    gap: 1.4rem;
+}
+
+.energy-highlights {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+    align-items: stretch;
+}
+
+.energy-card {
+    position: relative;
+    padding: 1.3rem 1.4rem;
+    border-radius: 16px;
+    background: linear-gradient(135deg, rgba(44, 62, 80, 0.08), rgba(44, 62, 80, 0.02));
+    box-shadow: 0 12px 28px rgba(31, 45, 61, 0.08);
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+}
+
+.energy-card--wide {
+    grid-column: 1 / -1;
+    background: linear-gradient(135deg, rgba(78, 205, 196, 0.12), rgba(44, 62, 80, 0.05));
+    backdrop-filter: blur(6px);
+}
+
+@media (min-width: 960px) {
+    .energy-card--wide {
+        grid-column: span 2;
+    }
+}
+
+.energy-card--stat {
+    align-items: flex-start;
+}
+
+.energy-card__title {
+    font-size: 11pt;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #4f6f88;
+}
+
+.energy-card__text {
+    margin: 0;
+    font-size: 13pt;
+    line-height: 1.55;
+    color: #1f2d3d;
+}
+
+.energy-card__label {
+    font-size: 10pt;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #5a7188;
+}
+
+.energy-card__value {
+    font-size: 28pt;
+    font-weight: 700;
+    color: #23364a;
+    line-height: 1;
+}
+
+.energy-card__caption {
+    font-size: 12pt;
+    color: #345067;
+}
+
+.energy-divider {
+    height: 1px;
+    background: linear-gradient(90deg, rgba(47, 72, 88, 0), rgba(47, 72, 88, 0.35), rgba(47, 72, 88, 0));
+    margin: 0.5rem 0 0.8rem;
+}
+
+.astro-grid--pill {
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+}
+
+.astro-pill {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.6rem;
+    padding: 0.85rem 1rem;
+    border-radius: 999px;
+    background: linear-gradient(130deg, rgba(47, 72, 88, 0.08), rgba(47, 72, 88, 0.02));
+    box-shadow: 0 10px 24px rgba(30, 41, 59, 0.08);
+}
+
+.astro-pill-label {
+    font-size: 12pt;
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+.astro-pill-value {
+    font-size: 12pt;
+    font-weight: 600;
+    font-family: 'Fira Mono', 'JetBrains Mono', monospace;
+    color: #22303c;
+}
+
+/* --- Updated Table Styling for Planetary Timelines --- */
+.astro-section .astro-table {
+    width: 95%; /* Fit content width */
+    margin: 0.75rem auto; /* Center table */
+    border-collapse: separate;
+    border-spacing: 0;
+    background: rgba(255, 255, 255, 0.96);
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 16px 36px rgba(15, 23, 42, 0.09);
+    text-align: center;
+}
+
+.astro-section .astro-table thead tr {
+    background: rgba(47, 72, 88, 0.08);
+}
+
+.astro-section .astro-table thead th {
+    padding: 0.65rem 1.2rem;
+    font-size: 14pt;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #415163;
+    white-space: nowrap;
+}
+
+.astro-section .astro-table tbody tr:nth-child(odd) {
+    background: rgba(247, 250, 252, 0.9);
+}
+
+.astro-section .astro-table tbody tr:nth-child(even) {
+    background: rgba(255, 255, 255, 0.96);
+}
+
+.astro-section .astro-table tbody td {
+    padding: 0.75rem 2rem 0.75rem 1rem; 
+    font-size: 16pt;
+    color: #1f2d3d;
+    border-bottom: 1px solid rgba(47, 72, 88, 0.08);
+    white-space: nowrap;
+}
+
+.astro-section .astro-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* --- Empty State --- */
+.astro-empty {
+    padding: 1.2rem;
+    border-radius: 16px;
+    text-align: center;
+    font-size: 12pt;
+    color: #5c6b7a;
+    background: rgba(47, 72, 88, 0.06);
+}

@@ -1,0 +1,128 @@
+<!-- Page 4: Astrological Details -->
+<div class="page">
+    <div class="content">
+        <div class="astro-content">
+            <div class="astro-header">
+                <img src="{{header_image}}" alt="Header" class="header-image left" />
+                <h2>Astrological Details</h2>
+                <img src="{{header_image}}" alt="Header" class="header-image right" />
+            </div>
+
+            <section class="astro-section">
+                <h3>Core Cosmic Identity</h3>
+                <div class="astro-grid">
+                    {{core_rows}}
+                </div>
+            </section>
+
+            <section class="astro-section">
+                <h3>Daily Catalysts</h3>
+                <div class="astro-grid">
+                    {{daily_rows}}
+                </div>
+            </section>
+        </div>
+    </div>
+    <div class="footer">
+        <p>© 2025 TrustAstrology. All Rights Reserved.</p>
+    </div>
+</div>
+
+<!-- Page 5: Planetary Timelines -->
+<div class="page">
+    <div class="content">
+        <div class="astro-content">
+            <div class="astro-header">
+                <img src="{{header_image}}" alt="Header" class="header-image left" />
+                <h2>Planetary Timelines</h2>
+                <img src="{{header_image}}" alt="Header" class="header-image right" />
+            </div>
+
+            <section class="astro-section">
+                <h3>Mahadasha Horizon</h3>
+                <table class="astro-table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Mahadasha</th>
+                            <th scope="col">Starts</th>
+                            <th scope="col">Ends</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{mahadasha_rows}}
+                    </tbody>
+                </table>
+            </section>
+
+            <section class="astro-section">
+                <h3>Upcoming Antardasha</h3>
+                <table class="astro-table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Antardasha</th>
+                            <th scope="col">Starts</th>
+                            <th scope="col">Ends</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{antardasha_rows}}
+                    </tbody>
+                </table>
+            </section>
+        </div>
+    </div>
+    <div class="footer">
+        <p>© 2025 TrustAstrology. All Rights Reserved.</p>
+    </div>
+</div>
+
+<!-- Page 6: Energy Metrics -->
+<div class="page">
+    <div class="content">
+        <div class="astro-content">
+            <div class="astro-header">
+                <img src="{{header_image}}" alt="Header" class="header-image left" />
+                <h2>Energy Metrics</h2>
+                <img src="{{header_image}}" alt="Header" class="header-image right" />
+            </div>
+
+            <section class="astro-section energy-section">
+                <h3>Shad Bala Strength</h3>
+
+                <div class="energy-highlights">
+                    <div class="energy-card energy-card--wide">
+                        <span class="energy-card__title">Energy Synopsis</span>
+                        <p class="energy-card__text">{{shadbala_summary}}</p>
+                    </div>
+
+                    <div class="energy-card energy-card--stat">
+                        <span class="energy-card__label">Strongest Flow</span>
+                        <span class="energy-card__value">{{shadbala_peak_value}}</span>
+                        <span class="energy-card__caption">{{shadbala_peak}}</span>
+                    </div>
+
+                    <div class="energy-card energy-card--stat">
+                        <span class="energy-card__label">Gentle Current</span>
+                        <span class="energy-card__value">{{shadbala_low_value}}</span>
+                        <span class="energy-card__caption">{{shadbala_low}}</span>
+                    </div>
+
+                    <div class="energy-card energy-card--stat">
+                        <span class="energy-card__label">Average Momentum</span>
+                        <span class="energy-card__value">{{shadbala_average}}</span>
+                        <span class="energy-card__caption">Across highlighted planets</span>
+                    </div>
+                </div>
+
+                <div class="energy-divider"></div>
+
+                <div class="astro-grid astro-grid--pill">
+                    {{shadbala_rows}}
+                </div>
+            </section>
+        </div>
+    </div>
+    <div class="footer">
+        <p>© 2025 TrustAstrology. All Rights Reserved.</p>
+    </div>
+</div>
