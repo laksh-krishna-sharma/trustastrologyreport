@@ -33,6 +33,7 @@ export async function POST(request: NextRequest) {
     }
 
     const astroDetails: JsonRecord | undefined = payload.astro ?? fallbackRecord?.astro;
+    const chartImages: Record<string, string> = (astroDetails?.charts ?? payload.chart_images ?? {}) as Record<string, string>;
 
     const name = resolvedFields.name as string;
     const dateOfBirth = resolvedFields.date_of_birth as string;
@@ -47,12 +48,13 @@ export async function POST(request: NextRequest) {
       timeOfBirth,
       gender,
       astroDetails,
+      chartImages,
     };
 
     const coverImageDataUrl = await toDataUrl('public/coverpage.png');
     const headerImageDataUrl = await toDataUrl('public/header.png');
 
-    const { html: fullHtml, css: cssContent } = assemblePages(pageData, headerImageDataUrl, coverImageDataUrl);
+    const { html: fullHtml, css: cssContent } = assemblePages(pageData, headerImageDataUrl, coverImageDataUrl, chartImages);
 
     // Inline CSS into HTML
     const finalHtml = fullHtml.replace('<link rel="stylesheet" href="./pdf.css">', `<style>${cssContent}</style>`);
