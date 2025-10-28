@@ -47,3 +47,15 @@ body {
     margin: 0.25rem 0;
     font-size: 16pt;
 }
+
+.footer {
+    text-align: center;
+    font-size: 10pt;
+    color: #7f8c8d;
+    margin-top: 2rem;
+    /* move to bottom of page */
+    position: absolute;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+}
