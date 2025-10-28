@@ -32,8 +32,9 @@ export async function POST(request: NextRequest) {
       }
     }
 
-    const astroDetails: JsonRecord | undefined = payload.astro ?? fallbackRecord?.astro;
-    const chartImages: Record<string, string> = (astroDetails?.charts ?? payload.chart_images ?? {}) as Record<string, string>;
+  const astroDetails: JsonRecord | undefined = payload.astro ?? fallbackRecord?.astro;
+  const chartImages: Record<string, string> = (astroDetails?.charts ?? payload.chart_images ?? {}) as Record<string, string>;
+  const astavargaChartImage = (astroDetails?.astavarga_chart_image ?? payload.astavarga_chart_image) as string | undefined;
 
     const name = resolvedFields.name as string;
     const dateOfBirth = resolvedFields.date_of_birth as string;
@@ -49,6 +50,7 @@ export async function POST(request: NextRequest) {
       gender,
       astroDetails,
       chartImages,
+      astavargaChartImage,
     };
 
     const coverImageDataUrl = await toDataUrl('public/coverpage.png');

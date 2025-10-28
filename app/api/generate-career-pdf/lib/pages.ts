@@ -1,6 +1,7 @@
 import { readUtf8 } from './io';
 import { loadAstrologicalDetails } from './astrological_details';
 import { loadHoroscopeCharts } from './horoscope_charts';
+import { loadAstavargaChart } from './astavarga_chart';
 
 export interface PageData {
   name: string;
@@ -10,6 +11,7 @@ export interface PageData {
   gender: string;
   astroDetails?: any;
   chartImages?: Record<string, string>;
+  astavargaChartImage?: string;
 }
 
 export function loadCssBundle(headerImageDataUrl: string, coverImageDataUrl: string): string {
@@ -18,15 +20,17 @@ export function loadCssBundle(headerImageDataUrl: string, coverImageDataUrl: str
   const tableOfContentCssPath = 'app/lib/career/table_of_content/table_of_content.css';
   const astrologicalDetailsCssPath = 'app/lib/career/astrological_details/astrological_details.css';
   const horoscopeChartsCssPath = 'app/lib/career/horoscope_charts/horoscope_charts.css';
+  const astavargaChartCssPath = 'app/lib/career/astavarga_chart/astavarga_chart.css';
 
   let cssContent = readUtf8(cssPath);
   const disclaimerCss = readUtf8(disclaimerCssPath);
   const tableOfContentCss = readUtf8(tableOfContentCssPath);
   const astrologicalDetailsCss = readUtf8(astrologicalDetailsCssPath);
   const horoscopeChartsCss = readUtf8(horoscopeChartsCssPath);
+  const astavargaChartCss = readUtf8(astavargaChartCssPath);
 
-    cssContent = cssContent.replace(/\{\{cover_image\}\}/g, coverImageDataUrl);
-  cssContent = `${cssContent}\n${disclaimerCss}\n${tableOfContentCss}\n${astrologicalDetailsCss}\n${horoscopeChartsCss}`;
+  cssContent = cssContent.replace(/\{\{cover_image\}\}/g, coverImageDataUrl);
+  cssContent = `${cssContent}\n${disclaimerCss}\n${tableOfContentCss}\n${astrologicalDetailsCss}\n${horoscopeChartsCss}\n${astavargaChartCss}`;
 
   return cssContent;
 }
@@ -45,7 +49,14 @@ export function loadTableOfContents(headerImageDataUrl: string): string {
   return content;
 }
 
-export function loadMainPage(data: PageData, disclaimer: string, toc: string, astro: string, horoscope: string): string {
+export function loadMainPage(
+  data: PageData,
+  disclaimer: string,
+  toc: string,
+  astro: string,
+  horoscope: string,
+  astavarga: string
+): string {
   const htmlPath = 'app/lib/career/pdf.html';
   let content = readUtf8(htmlPath);
 
@@ -57,8 +68,9 @@ export function loadMainPage(data: PageData, disclaimer: string, toc: string, as
     .replace(/\{\{gender\}\}/g, data.gender)
     .replace(/\{\{disclaimer_content\}\}/g, disclaimer)
     .replace(/\{\{table_of_content\}\}/g, toc)
-    .replace(/\{\{astrological_details\}\}/g, astro)
-    .replace(/\{\{horoscope_charts\}\}/g, horoscope);
+  .replace(/\{\{astrological_details\}\}/g, astro)
+  .replace(/\{\{horoscope_charts\}\}/g, horoscope)
+  .replace(/\{\{astavarga_chart\}\}/g, astavarga);
 
   return content;
 }
@@ -74,7 +86,8 @@ export function assemblePages(
   const toc = loadTableOfContents(headerImageDataUrl);
   const astro = loadAstrologicalDetails(data.astroDetails, headerImageDataUrl);
   const charts = loadHoroscopeCharts(headerImageDataUrl, chartImages);
-  const html = loadMainPage(data, disclaimer, toc, astro, charts);
+  const astavarga = loadAstavargaChart(headerImageDataUrl, data.astavargaChartImage);
+  const html = loadMainPage(data, disclaimer, toc, astro, charts, astavarga);
 
   return { html, css };
 }

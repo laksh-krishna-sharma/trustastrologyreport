@@ -1,4 +1,4 @@
-type JsonRecord = Record<string, any>;
+type JsonRecord = Record<string, unknown>;
 export type TimelineColumn = { key: string; label: string };
 export type KeyValueEntry = { label: string; value: unknown; variant?: string };
 

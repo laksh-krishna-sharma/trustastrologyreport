@@ -7,6 +7,7 @@ body {
     margin: 0;
     padding: 0;
     background: none;
+    counter-reset: page-number;
 }
 
 .page {
@@ -15,6 +16,11 @@ body {
     page-break-after: always;
     position: relative;
     overflow: hidden;
+    counter-increment: page-number;
+}
+
+.page:nth-of-type(-n+3) {
+    counter-increment: none;
 }
 
 /* Full-page cover image */
@@ -58,4 +64,18 @@ body {
     bottom: 1rem;
     left: 50%;
     transform: translateX(-50%);
+}
+
+.page::after {
+    content: counter(page-number, decimal-leading-zero);
+    position: absolute;
+    bottom: 2rem;
+    right: 1.5rem;
+    font-size: 12pt;
+    color: #7f8c8d;
+    font-weight: 600;
+}
+
+.page:nth-of-type(-n+3)::after {
+    content: none;
 }
