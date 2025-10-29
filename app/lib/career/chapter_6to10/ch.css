@@ -1,0 +1,72 @@
+/* chapter content styling */
+.chapter-content {
+    text-align: justify;
+    font-size: 11pt;
+    line-height: 1.4;
+    padding: 2rem;
+}
+
+.chapter-content h2 {
+    text-align: center;
+    font-size: 18pt;
+    margin-bottom: 0.5rem;
+    color: #2c3e50;
+}
+
+.chapter-content p {
+    margin-bottom: 0.75rem;
+    font-size: 14pt;
+    text-align: justify;
+}
+
+.chapter-section {
+    margin-bottom: 1.5rem;
+}
+
+.chapter-section h3 {
+    font-size: 16pt;
+    margin-bottom: 0.5rem;
+    color: #1a5276;
+}
+
+.chapter-content strong {
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+.chapter-content em {
+    font-style: italic;
+    color: #34495e;
+}
+
+/* chapter header with images */
+.chapter-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+    gap: 0.5rem;
+}
+
+.chapter-header h2 {
+    text-align: center;
+    font-size: 22pt;
+    margin: 0;
+    color: #2c3e50;
+    white-space: nowrap;
+}
+
+.header-image {
+    width: 120px;
+    height: auto;
+    object-fit: contain;
+}
+
+.header-image.left {
+    order: -1;
+}
+
+.header-image.right {
+    order: 1;
+}
+

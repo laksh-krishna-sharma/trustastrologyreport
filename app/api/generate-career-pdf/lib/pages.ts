@@ -2,6 +2,7 @@ import { readUtf8 } from './io';
 import { loadAstrologicalDetails } from './astrological_details';
 import { loadHoroscopeCharts } from './horoscope_charts';
 import { loadAstavargaChart } from './astavarga_chart';
+import { loadChapter610 } from './chapter_6to10';
 
 export interface PageData {
   name: string;
@@ -21,6 +22,7 @@ export function loadCssBundle(headerImageDataUrl: string, coverImageDataUrl: str
   const astrologicalDetailsCssPath = 'app/lib/career/astrological_details/astrological_details.css';
   const horoscopeChartsCssPath = 'app/lib/career/horoscope_charts/horoscope_charts.css';
   const astavargaChartCssPath = 'app/lib/career/astavarga_chart/astavarga_chart.css';
+  const chapter610CssPath = 'app/lib/career/chapter_6to10/ch.css';
 
   let cssContent = readUtf8(cssPath);
   const disclaimerCss = readUtf8(disclaimerCssPath);
@@ -28,9 +30,10 @@ export function loadCssBundle(headerImageDataUrl: string, coverImageDataUrl: str
   const astrologicalDetailsCss = readUtf8(astrologicalDetailsCssPath);
   const horoscopeChartsCss = readUtf8(horoscopeChartsCssPath);
   const astavargaChartCss = readUtf8(astavargaChartCssPath);
+  const chapter610Css = readUtf8(chapter610CssPath);
 
   cssContent = cssContent.replace(/\{\{cover_image\}\}/g, coverImageDataUrl);
-  cssContent = `${cssContent}\n${disclaimerCss}\n${tableOfContentCss}\n${astrologicalDetailsCss}\n${horoscopeChartsCss}\n${astavargaChartCss}`;
+  cssContent = `${cssContent}\n${disclaimerCss}\n${tableOfContentCss}\n${astrologicalDetailsCss}\n${horoscopeChartsCss}\n${astavargaChartCss}\n${chapter610Css}`;
 
   return cssContent;
 }
@@ -55,7 +58,8 @@ export function loadMainPage(
   toc: string,
   astro: string,
   horoscope: string,
-  astavarga: string
+  astavarga: string,
+  chapter610: string
 ): string {
   const htmlPath = 'app/lib/career/pdf.html';
   let content = readUtf8(htmlPath);
@@ -70,7 +74,8 @@ export function loadMainPage(
     .replace(/\{\{table_of_content\}\}/g, toc)
   .replace(/\{\{astrological_details\}\}/g, astro)
   .replace(/\{\{horoscope_charts\}\}/g, horoscope)
-  .replace(/\{\{astavarga_chart\}\}/g, astavarga);
+  .replace(/\{\{astavarga_chart\}\}/g, astavarga)
+  .replace(/\{\{chapter_6to10\}\}/g, chapter610);
 
   return content;
 }
@@ -87,7 +92,8 @@ export function assemblePages(
   const astro = loadAstrologicalDetails(data.astroDetails, headerImageDataUrl);
   const charts = loadHoroscopeCharts(headerImageDataUrl, chartImages);
   const astavarga = loadAstavargaChart(headerImageDataUrl, data.astavargaChartImage);
-  const html = loadMainPage(data, disclaimer, toc, astro, charts, astavarga);
+  const chapter610 = loadChapter610(headerImageDataUrl);
+  const html = loadMainPage(data, disclaimer, toc, astro, charts, astavarga, chapter610);
 
   return { html, css };
 }
