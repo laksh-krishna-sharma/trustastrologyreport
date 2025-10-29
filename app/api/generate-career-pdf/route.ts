@@ -56,7 +56,16 @@ export async function POST(request: NextRequest) {
     const coverImageDataUrl = await toDataUrl('public/coverpage.png');
     const headerImageDataUrl = await toDataUrl('public/header.png');
 
-    const { html: fullHtml, css: cssContent } = assemblePages(pageData, headerImageDataUrl, coverImageDataUrl, chartImages);
+    const birthImprintModule = await import('../../agent/career/birth_imprint_agent');
+    const birthImprintHtml = (birthImprintModule.default ?? '') as string;
+
+    const { html: fullHtml, css: cssContent } = assemblePages(
+      pageData,
+      headerImageDataUrl,
+      coverImageDataUrl,
+      chartImages,
+      birthImprintHtml
+    );
 
     // Inline CSS into HTML
     const finalHtml = fullHtml.replace('<link rel="stylesheet" href="./pdf.css">', `<style>${cssContent}</style>`);
