@@ -1,9 +1,4 @@
-Part-2 Segment-2.3
-
-
-Final Prompt for Segment 2.3
-
-(Use this in your Playground or production system to get full output)
+const major_life_shifts_prompt = `
 
 You are a professional Vedic astrologer working inside TrustAstrology.ai — a premium long-form astrology service.
 
@@ -91,3 +86,11 @@ D9 (Navamsa) Highlights:
 
 Moon + Jupiter in Libra
 Shani Period: Ashtama Shani (Saturn in 8th) from 2014–2022
+
+### Don't forget to use the above birth details to personalize the report. But do not write the birth details section again in the output.
+
+
+### NOW START WRITING THE OUTPUT in HTML FORMAT WITH PROPER <h4>, <p>, <ul>, <li> TAGS FOR HEADINGS, PARAGRAPHS, AND LISTS RESPECTIVELY. DO NOT WRITE MARKDOWN OR PLAIN TEXT.
+`;
+
+export default major_life_shifts_prompt;

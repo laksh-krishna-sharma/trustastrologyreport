@@ -85,7 +85,11 @@ export function assemblePages(
   headerImageDataUrl: string,
   coverImageDataUrl: string,
   chartImages: Record<string, string>,
-  birthImprintHtml: string
+  birthImprintHtml: string,
+  karmicTraitsHtml: string,
+  lifeTimelineHtml: string,
+  planetryCyclesHtml: string,
+  majorLifeShiftsTextHtml: string
 ): { html: string; css: string } {
   const css = loadCssBundle(headerImageDataUrl, coverImageDataUrl);
   const disclaimer = loadDisclaimer(headerImageDataUrl);
@@ -93,7 +97,14 @@ export function assemblePages(
   const astro = loadAstrologicalDetails(data.astroDetails, headerImageDataUrl);
   const charts = loadHoroscopeCharts(headerImageDataUrl, chartImages);
   const astavarga = loadAstavargaChart(headerImageDataUrl, data.astavargaChartImage);
-  const chapter610 = loadChapter610(headerImageDataUrl, birthImprintHtml);
+  const chapter610 = loadChapter610(
+    headerImageDataUrl,
+    birthImprintHtml,
+    karmicTraitsHtml,
+    lifeTimelineHtml,
+    planetryCyclesHtml,
+    majorLifeShiftsTextHtml
+  );
   const html = loadMainPage(data, disclaimer, toc, astro, charts, astavarga, chapter610);
 
   return { html, css };

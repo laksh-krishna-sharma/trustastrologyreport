@@ -53,18 +53,34 @@ export async function POST(request: NextRequest) {
       astavargaChartImage,
     };
 
-    const coverImageDataUrl = await toDataUrl('public/coverpage.png');
-    const headerImageDataUrl = await toDataUrl('public/header.png');
+    const coverImageDataUrl = toDataUrl('public/coverpage.png');
+    const headerImageDataUrl = toDataUrl('public/header.png');
 
     const birthImprintModule = await import('../../agent/career/birth_imprint_agent');
     const birthImprintHtml = (birthImprintModule.default ?? '') as string;
+
+    const karmicTraitsModule = await import('../../agent/career/karmic_traits_agent');
+    const karmicTraitsHtml = (karmicTraitsModule.default ?? '') as string;
+
+    const lifeTimelineModule = await import('../../agent/career/karmic_traits_agent');
+    const lifeTimelineHtml = (lifeTimelineModule.default ?? '') as string;    
+
+    const planetryCyclesModule = await import('../../agent/career/planetary_cycles_agent');
+    const planetryCyclesHtml = (planetryCyclesModule.default ?? '') as string;
+
+    const majorLifeShiftsModule = await import('../../agent/career/major_life_shifts_agent');
+    const majorLifeShiftsTextHtml = (majorLifeShiftsModule.default ?? '') as string;
 
     const { html: fullHtml, css: cssContent } = assemblePages(
       pageData,
       headerImageDataUrl,
       coverImageDataUrl,
       chartImages,
-      birthImprintHtml
+      birthImprintHtml,
+      karmicTraitsHtml,
+      lifeTimelineHtml,
+      planetryCyclesHtml,
+      majorLifeShiftsTextHtml
     );
 
     // Inline CSS into HTML

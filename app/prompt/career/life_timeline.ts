@@ -1,4 +1,4 @@
-Part-2 Segment-2.1
+const life_timeline_prompt = `
 
 You are a professional Vedic astrologer working inside TrustAstrology.ai — a premium long-form astrology service.
 
@@ -106,4 +106,10 @@ D10 Chart:
   - 10th House: Mercury  
   - Moon in Pisces
 
-NOW START WRITING SEGMENT 2.1
+### Don't forget to use the above birth details to personalize the report. But do not write the birth details section again in the output.
+
+
+### NOW START WRITING THE OUTPUT in HTML FORMAT WITH PROPER <h4>, <p>, <ul>, <li> TAGS FOR HEADINGS, PARAGRAPHS, AND LISTS RESPECTIVELY. DO NOT WRITE MARKDOWN OR PLAIN TEXT.
+`;
+
+export default life_timeline_prompt;
