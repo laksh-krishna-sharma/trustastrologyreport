@@ -89,7 +89,7 @@ export function assemblePages(
   karmicTraitsHtml: string,
   lifeTimelineHtml: string,
   planetryCyclesHtml: string,
-  majorLifeShiftsTextHtml: string
+  majorLifeShiftsHtml: string
 ): { html: string; css: string } {
   const css = loadCssBundle(headerImageDataUrl, coverImageDataUrl);
   const disclaimer = loadDisclaimer(headerImageDataUrl);
@@ -103,7 +103,7 @@ export function assemblePages(
     karmicTraitsHtml,
     lifeTimelineHtml,
     planetryCyclesHtml,
-    majorLifeShiftsTextHtml
+    majorLifeShiftsHtml
   );
   const html = loadMainPage(data, disclaimer, toc, astro, charts, astavarga, chapter610);
 

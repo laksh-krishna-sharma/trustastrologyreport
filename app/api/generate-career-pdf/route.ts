@@ -55,21 +55,26 @@ export async function POST(request: NextRequest) {
 
     const coverImageDataUrl = toDataUrl('public/coverpage.png');
     const headerImageDataUrl = toDataUrl('public/header.png');
+    const [
+      birthImprintModule,
+      karmicTraitsModule,
+      lifeTimelineModule,
+      planetaryCyclesModule,
+      majorLifeShiftsModule
+    ] = await Promise.all([
+      import('../../agent/career/birth_imprint_agent'),
+      import('../../agent/career/karmic_traits_agent'),
+      import('../../agent/career/life_timeline_agent'),
+      import('../../agent/career/planetary_cycles_agent'),
+      import('../../agent/career/major_life_shifts_agent')
+    ]);
 
-    const birthImprintModule = await import('../../agent/career/birth_imprint_agent');
     const birthImprintHtml = (birthImprintModule.default ?? '') as string;
-
-    const karmicTraitsModule = await import('../../agent/career/karmic_traits_agent');
     const karmicTraitsHtml = (karmicTraitsModule.default ?? '') as string;
+    const lifeTimelineHtml = (lifeTimelineModule.default ?? '') as string;
+    const planetryCyclesHtml = (planetaryCyclesModule.default ?? '') as string;
+    const majorLifeShiftsHtml = (majorLifeShiftsModule.default ?? '') as string;
 
-    const lifeTimelineModule = await import('../../agent/career/karmic_traits_agent');
-    const lifeTimelineHtml = (lifeTimelineModule.default ?? '') as string;    
-
-    const planetryCyclesModule = await import('../../agent/career/planetary_cycles_agent');
-    const planetryCyclesHtml = (planetryCyclesModule.default ?? '') as string;
-
-    const majorLifeShiftsModule = await import('../../agent/career/major_life_shifts_agent');
-    const majorLifeShiftsTextHtml = (majorLifeShiftsModule.default ?? '') as string;
 
     const { html: fullHtml, css: cssContent } = assemblePages(
       pageData,
@@ -80,7 +85,7 @@ export async function POST(request: NextRequest) {
       karmicTraitsHtml,
       lifeTimelineHtml,
       planetryCyclesHtml,
-      majorLifeShiftsTextHtml
+      majorLifeShiftsHtml
     );
 
     // Inline CSS into HTML
