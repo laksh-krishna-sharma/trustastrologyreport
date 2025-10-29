@@ -17,7 +17,7 @@ Use this format:
 - Bullet list of 4–5 personality traits due to Leo Lagna (e.g., initiative, high standards, ownership)
 - Then a deep paragraph explaining the "why" behind these traits — how the soul craves purpose, not just applause.
 
-🔹 The Signature Combination: Moon + Saturn + Rahu in Lagna  
+The Signature Combination: Moon + Saturn + Rahu in Lagna  
 (Write detailed sections about these 3 planets in Lagna. Write **minimum 2 full paragraphs per planet**.)
 
 Moon in Leo – Emotional Visibility  
