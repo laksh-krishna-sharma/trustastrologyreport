@@ -1,5 +1,5 @@
 import llm from "../lib/llm.ts";
-import karmic_traits_prompt from "../../prompt/career/karmic _traits.ts";
+import karmic_traits_prompt from "../../prompt/career/karmic_traits.ts";
 
 const birth_imprint_result = await llm.invoke(karmic_traits_prompt);
 

@@ -6,10 +6,7 @@ Your task is to generate Segment 2.3 of a user’s 60-page Premium Career Report
 
 STRUCTURE (Do Not Skip Any Section)
 
-Amit Gaur – Career Report
-A Comprehensive Vedic Career Analysis prepared exclusively by TrustAstrology.ai
 
-Segment 2.3
 Understanding Dasha Impact on Career
 
 Intro (150–200 words)
@@ -37,7 +34,7 @@ Describe how Amit’s identity will evolve — from restlessness to resonance. F
 Career Mapping Overview (48–60 years)
 Describe the full arc of transformation across these two dasha blocks. Make it feel like a soul evolution, not just career.
 
-TLDR (Must Include)
+summary (Must Include)
 Write 4–5 summary bullet points (plain English, emotionally clear):
 
 Rahu era = hunger, risk, deep growth
@@ -54,7 +51,7 @@ LENGTH: Minimum 2200 words
 
 TONE: Conversational, intelligent, insightful — NOT robotic
 
-FORMAT: Paragraph-wise (NO bullet points in main body except TLDR)
+FORMAT: Paragraph-wise (NO bullet points in main body except summary)
 
 INSIGHTS: Must reference D1 and D9 placements (Rahu, Saturn, Jupiter, Moon)
 

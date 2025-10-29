@@ -49,7 +49,7 @@ The tone must feel personal, intelligent, and emotionally perceptive — not tec
    * Saturn in Pisces (2025–2027)
      Describe how each refined Amit’s discipline, endurance, and self‑definition.
 8. Include a concise **career‑timeline table** (year → theme → effect).
-9. Conclude with a **TLDR summary** highlighting:
+9. Conclude with a **summary summary** highlighting:
 
    * What Rahu taught him,
    * What Jupiter will awaken,
@@ -59,10 +59,10 @@ The tone must feel personal, intelligent, and emotionally perceptive — not tec
 
 ### **Tone & Style Requirements**
 
-* Flowing narrative paragraphs — not bullet points (except for the timeline table and TLDR).
+* Flowing narrative paragraphs — not bullet points (except for the timeline table and summary).
 * Use clear section headings, subtle metaphors, and emotionally resonant phrasing.
 * Each paragraph must feel purposeful, as if explaining the “why” behind every turn in Amit’s professional life.
 * Maintain grammatical precision and readability for presentation use.
 * Overall length: detailed and immersive (similar depth to Segment 3.3).
 
-Output only the final written **Segment 4.1 report**, with headings, storytelling, and the TLDR at the end.
+Output only the final written **Segment 4.1 report**, with headings, storytelling, and the summary at the end.

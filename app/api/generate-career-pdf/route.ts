@@ -60,13 +60,19 @@ export async function POST(request: NextRequest) {
       karmicTraitsModule,
       lifeTimelineModule,
       planetaryCyclesModule,
-      majorLifeShiftsModule
+      majorLifeShiftsModule,
+      keyCareerHousesModule,
+      guidingPlanetsModule,
+      professionalKarmaFocusModule
     ] = await Promise.all([
       import('../../agent/career/birth_imprint_agent'),
       import('../../agent/career/karmic_traits_agent'),
       import('../../agent/career/life_timeline_agent'),
       import('../../agent/career/planetary_cycles_agent'),
-      import('../../agent/career/major_life_shifts_agent')
+      import('../../agent/career/major_life_shifts_agent'),
+      import('../../agent/career/key_career_houses_agent'),
+      import('../../agent/career/guiding_planets_agent'),
+      import('../../agent/career/professional_karma_focus_agent')
     ]);
 
     const birthImprintHtml = (birthImprintModule.default ?? '') as string;
@@ -74,6 +80,9 @@ export async function POST(request: NextRequest) {
     const lifeTimelineHtml = (lifeTimelineModule.default ?? '') as string;
     const planetryCyclesHtml = (planetaryCyclesModule.default ?? '') as string;
     const majorLifeShiftsHtml = (majorLifeShiftsModule.default ?? '') as string;
+    const keyCareerHousesHtml = (keyCareerHousesModule.default ?? '') as string;
+    const guidingPlanetsHtml = (guidingPlanetsModule.default ?? '') as string;
+    const professionalKarmaFocusHtml = (professionalKarmaFocusModule.default ?? '') as string;
 
 
     const { html: fullHtml, css: cssContent } = assemblePages(
@@ -85,7 +94,10 @@ export async function POST(request: NextRequest) {
       karmicTraitsHtml,
       lifeTimelineHtml,
       planetryCyclesHtml,
-      majorLifeShiftsHtml
+      majorLifeShiftsHtml,
+      keyCareerHousesHtml,
+      guidingPlanetsHtml,
+      professionalKarmaFocusHtml
     );
 
     // Inline CSS into HTML

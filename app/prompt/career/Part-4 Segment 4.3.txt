@@ -78,7 +78,7 @@ Formatting Requirements:
 
 Use clear time-based subheaders for each Mahadasha period
 
-Close with a TL;DR summary:
+Close with a summary:
 Point wise.
 
 Add a Final Insight paragraph with an emotionally powerful conclusion

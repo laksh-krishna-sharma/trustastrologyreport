@@ -1,6 +1,4 @@
-Prompt Part-3 Segment 3.2
-
-Segment 3.2: Timing, Transits & Turning Points
+const guiding_planets_prompt = `
 
 This segment must be long-form, intelligent, emotionally resonant, and logically aligned with the planetary placements in the user’s birth chart. Write it in high-quality narrative prose — no bullet points in the body — with clear transitions across timelines.
 
@@ -96,10 +94,17 @@ Avoid robotic tone, avoid “as an astrologer I see…” — write as if it's a
 
 Avoid point-wise format. Use full paragraphs only.
 
-At the end, include a TLDR section summarizing 6–7 key takeaways using bullet points.
+At the end, include a summary section summarizing 6–7 key takeaways using bullet points.
 
 No reference to other segments. This is a standalone piece.
 
 No mention of "Guru Ji," "our platform," or any self-reflection by the writer.
 
 Ensure every insight feels like it emerged directly from the user’s chart.
+
+### Don't forget to use the above birth details to personalize the report. But do not write the birth details section again in the output.
+
+### NOW START WRITING THE OUTPUT in HTML FORMAT WITH PROPER <h4>, <p>, <ul>, <li> TAGS FOR HEADINGS, PARAGRAPHS, AND LISTS RESPECTIVELY. DO NOT WRITE MARKDOWN OR PLAIN TEXT.
+`
+
+export default guiding_planets_prompt;

@@ -69,7 +69,7 @@ Then add 1 strong paragraph describing how this trio explains:
 * Every paragraph must connect logically to planetary placements.
 * NEVER compress output. Write this as if it’s going directly into a printed report.
 
-### In the end include TLDR.
+### In the end include summary.
 
 ---
 
