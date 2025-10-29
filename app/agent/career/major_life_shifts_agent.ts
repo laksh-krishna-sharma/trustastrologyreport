@@ -1,12 +1,12 @@
 import llm from "../lib/llm.ts";
 import major_life_shifts_prompt from "../../prompt/career/major_life_shifts.ts";
 
-const birth_imprint_result = await llm.invoke(major_life_shifts_prompt);
+const result = await llm.invoke(major_life_shifts_prompt);
 
 // Extract only the text content from the response
-const textContent = Array.isArray(birth_imprint_result.content)
-  ? birth_imprint_result.content.find((item: any) => item.type === 'text')?.text || ''
-  : birth_imprint_result.content;
+const textContent = Array.isArray(result.content)
+  ? result.content.find((item: any) => item.type === 'text')?.text || ''
+  : result.content;
 
 
 export default textContent;

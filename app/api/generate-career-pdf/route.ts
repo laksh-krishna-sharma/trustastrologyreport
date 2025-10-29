@@ -63,7 +63,11 @@ export async function POST(request: NextRequest) {
       majorLifeShiftsModule,
       keyCareerHousesModule,
       guidingPlanetsModule,
-      professionalKarmaFocusModule
+      professionalKarmaFocusModule,
+      recommendedCareerModule,
+      practicalRolesUpayasModule,
+      alignmentGuidanceModule,
+      rareYogasModule
     ] = await Promise.all([
       import('../../agent/career/birth_imprint_agent'),
       import('../../agent/career/karmic_traits_agent'),
@@ -72,7 +76,11 @@ export async function POST(request: NextRequest) {
       import('../../agent/career/major_life_shifts_agent'),
       import('../../agent/career/key_career_houses_agent'),
       import('../../agent/career/guiding_planets_agent'),
-      import('../../agent/career/professional_karma_focus_agent')
+      import('../../agent/career/professional_karma_focus_agent'),
+      import('../../agent/career/recommended_career_agent'),
+      import('../../agent/career/practical_roles_upayas_agent'),
+      import('../../agent/career/alignment_guidance_agent'),
+      import('../../agent/career/rare_yogas_agent')
     ]);
 
     const birthImprintHtml = (birthImprintModule.default ?? '') as string;
@@ -83,6 +91,10 @@ export async function POST(request: NextRequest) {
     const keyCareerHousesHtml = (keyCareerHousesModule.default ?? '') as string;
     const guidingPlanetsHtml = (guidingPlanetsModule.default ?? '') as string;
     const professionalKarmaFocusHtml = (professionalKarmaFocusModule.default ?? '') as string;
+    const recommendedCareerHtml = (recommendedCareerModule.default ?? '') as string;
+    const practicalRolesUpayasHtml = (practicalRolesUpayasModule.default ?? '') as string;
+    const alignmentGuidanceHtml = (alignmentGuidanceModule.default ?? '') as string;
+    const rareYogasHtml = (rareYogasModule.default ?? '') as string;
 
 
     const { html: fullHtml, css: cssContent } = assemblePages(
@@ -97,7 +109,11 @@ export async function POST(request: NextRequest) {
       majorLifeShiftsHtml,
       keyCareerHousesHtml,
       guidingPlanetsHtml,
-      professionalKarmaFocusHtml
+      professionalKarmaFocusHtml,
+      recommendedCareerHtml,
+      practicalRolesUpayasHtml,
+      alignmentGuidanceHtml,
+      rareYogasHtml
     );
 
     // Inline CSS into HTML

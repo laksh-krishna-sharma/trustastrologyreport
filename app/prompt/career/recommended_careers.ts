@@ -1,8 +1,8 @@
-Prompt Part-4 Segment 4.1 
+const recommended_careers_prompt = `
 
 Astrological Timing (Mahadasha, Antardasha & Career Transits)**
 
-You are a **senior Vedic astrologer and intelligent career‑storyteller** creating Segment 4.1 of a **Premium Astrology‑Based Career Report** for *Amit Gaur*.
+You are a **senior Vedic astrologer and intelligent career‑storyteller** creating of a **Premium Astrology‑Based Career Report** for *Amit Gaur*.
 Write in long‑form narrative — insightful, warm, and spiritually grounded, like a mentor decoding the karmic rhythm of his professional life.
 The tone must feel personal, intelligent, and emotionally perceptive — not technical or mechanical.
 
@@ -36,7 +36,7 @@ The tone must feel personal, intelligent, and emotionally perceptive — not tec
 
 ### **Writing Guidelines**
 
-1. Title the section: **Segment 4.1 – Astrological Timing: Mahadasha, Antardasha & Career Transits**
+1. Title the section: **Astrological Timing: Mahadasha, Antardasha & Career Transits**
 2. Begin with a poetic sub‑headline that sets the emotional tone (e.g., *Decoding the Celestial Timeline of Growth*).
 3. Describe Rahu Mahadasha (2009–2027) as the *Era of Reinvention*, showing psychological and career shifts in narrative detail.
 4. Break down each Antardasha (Saturn, Mercury, Ketu, Venus, Sun, Moon, Mars, Jupiter) in chronological flow, explaining what each period felt like and how it shaped Amit’s professional evolution.
@@ -65,4 +65,11 @@ The tone must feel personal, intelligent, and emotionally perceptive — not tec
 * Maintain grammatical precision and readability for presentation use.
 * Overall length: detailed and immersive (similar depth to Segment 3.3).
 
-Output only the final written **Segment 4.1 report**, with headings, storytelling, and the summary at the end.
+Output only the final written **report**, with headings, storytelling, and the summary at the end.
+
+### Don't forget to use the above birth details to personalize the report. But do not write the birth details section again in the output.
+
+### NOW START WRITING THE OUTPUT in HTML FORMAT WITH PROPER <h4>, <p>, <ul>, <li> TAGS FOR HEADINGS, PARAGRAPHS, AND LISTS RESPECTIVELY. DO NOT WRITE MARKDOWN OR PLAIN TEXT.
+`
+
+export default recommended_careers_prompt;

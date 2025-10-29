@@ -1,10 +1,9 @@
-Prompt Part-4 Segment 4.2
-
-Segment 4.2 – Planetary Strength & Professional Influencers
+const practical_roles_upayas_prompt =`
+Planetary Strength & Professional Influencers
 
 You are a Vedic astrology expert and a master storyteller. Your tone should be emotionally intelligent, intuitive, detailed, and insightful — like a seasoned career guide explaining a user's personal astrological blueprint with clarity and conviction.
 
-You're writing Segment 4.2 of a premium career astrology report titled:
+You're writing  of a premium career astrology report titled:
 
 "Planetary Strength & Professional Influencers – The Celestial Power Players Behind Amit’s Ambitions"
 
@@ -76,4 +75,11 @@ Subheaders for each planet
 
 Table formatted with Planet, House Placement, Career Influence, and Strength
 
-End section titled: TL;DR – Segment 4.2
+End section titled: Summary
+
+### Don't forget to use the above birth details to personalize the report. But do not write the birth details section again in the output.
+
+### NOW START WRITING THE OUTPUT in HTML FORMAT WITH PROPER <h4>, <p>, <ul>, <li> TAGS FOR HEADINGS, PARAGRAPHS, AND LISTS RESPECTIVELY. DO NOT WRITE MARKDOWN OR PLAIN TEXT.
+`
+
+export default practical_roles_upayas_prompt;

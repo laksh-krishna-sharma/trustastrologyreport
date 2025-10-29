@@ -9,7 +9,11 @@ export const loadChapter610 = (
   majorLifeShiftsHtml: string,
   keyCareerHousesHtml: string,
   guidingPlanetsHtml: string,
-  professionalKarmaFocusHtml: string
+  professionalKarmaFocusHtml: string,
+  recommendedCareerHtml: string,
+  practicalRolesUpayasHtml: string,
+  alignmentGuidanceHtml: string,
+  rareYogasHtml: string
 ): string => {
   const chapterPath = 'app/lib/career/chapter_6to10/ch.html';
   let content = readUtf8(chapterPath);
@@ -23,6 +27,10 @@ export const loadChapter610 = (
   content = content.replace(/\{\{key_career_houses_text\}\}/g, keyCareerHousesHtml);
   content = content.replace(/\{\{guiding_planets_text\}\}/g, guidingPlanetsHtml);
   content = content.replace(/\{\{professional_karma_focus_text\}\}/g, professionalKarmaFocusHtml);
+  content = content.replace(/\{\{recommended_careers_text\}\}/g, recommendedCareerHtml);
+  content = content.replace(/\{\{practical_roles_upayas_text\}\}/g, practicalRolesUpayasHtml);
+  content = content.replace(/\{\{alignment_guidance_text\}\}/g, alignmentGuidanceHtml);
+  content = content.replace(/\{\{rare_yogas_text\}\}/g, rareYogasHtml);
 
   return content;
 };

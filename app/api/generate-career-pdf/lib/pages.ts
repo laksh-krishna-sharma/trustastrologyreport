@@ -92,7 +92,11 @@ export function assemblePages(
   majorLifeShiftsHtml: string,
   keyCareerHousesHtml: string,
   guidingPlanetsHtml: string,
-  professionalKarmaFocusHtml: string
+  professionalKarmaFocusHtml: string,
+  recommendedCareerHtml: string,
+  practicalRolesUpayasHtml: string,
+  alignmentGuidanceHtml: string,
+  rareYogasHtml: string
 ): { html: string; css: string } {
   const css = loadCssBundle(headerImageDataUrl, coverImageDataUrl);
   const disclaimer = loadDisclaimer(headerImageDataUrl);
@@ -109,7 +113,11 @@ export function assemblePages(
     majorLifeShiftsHtml,
     keyCareerHousesHtml,
     guidingPlanetsHtml,
-    professionalKarmaFocusHtml
+    professionalKarmaFocusHtml,
+    recommendedCareerHtml,
+    practicalRolesUpayasHtml,
+    alignmentGuidanceHtml,
+    rareYogasHtml
   );
   const html = loadMainPage(data, disclaimer, toc, astro, charts, astavarga, chapter610);
 

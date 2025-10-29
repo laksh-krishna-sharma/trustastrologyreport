@@ -1,7 +1,7 @@
 import llm from "../lib/llm.ts";
-import guiding_planets_prompt from "../../prompt/career/guiding_planets.ts";
+import rare_yogas_prompt from "../../prompt/career/rare_yogas.ts";
 
-const result = await llm.invoke(guiding_planets_prompt);
+const result = await llm.invoke(rare_yogas_prompt);
 
 // Extract only the text content from the response
 const textContent = Array.isArray(result.content)

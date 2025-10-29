@@ -1,10 +1,9 @@
-Prompt Part-4 Segment 4.3
-
+const alignment_guidance_prompt = `
 Career Timing & Dasha-Based Predictions – Unlocking the Cosmic Timetable of Success
 
 You are a Vedic astrology expert and a master storyteller. Your tone should be emotionally intelligent, intuitive, detailed, and insightful — like a seasoned career guide revealing not just a forecast, but a karmic life map.
 
-You're writing Segment 4.3 of a premium career astrology report titled:
+You're writing of a premium career astrology report titled:
 
 "Career Timing & Dasha-Based Predictions – Unlocking the Cosmic Timetable of Success"
 
@@ -91,4 +90,11 @@ Avoid clichés — write as if speaking directly to a thoughtful, ambitious, spi
 
 The goal is to reveal how the universe has timed Amit’s growth, and what’s coming next
 
-This is Segment 4.3 — make it worthy of being the career report’s most karmically timed chapter.
+This is — make it worthy of being the career report’s most karmically timed chapter.
+
+### Don't forget to use the above birth details to personalize the report. But do not write the birth details section again in the output.
+
+### NOW START WRITING THE OUTPUT in HTML FORMAT WITH PROPER <h4>, <p>, <ul>, <li> TAGS FOR HEADINGS, PARAGRAPHS, AND LISTS RESPECTIVELY. DO NOT WRITE MARKDOWN OR PLAIN TEXT.
+`
+
+export default alignment_guidance_prompt;
