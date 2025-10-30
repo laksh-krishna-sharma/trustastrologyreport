@@ -51,7 +51,7 @@ LENGTH: Minimum 2200 words
 
 TONE: Conversational, intelligent, insightful — NOT robotic
 
-FORMAT: Paragraph-wise (NO bullet points in main body except summary)
+FORMAT: Paragraph-wise (* Summary must be in points format, not prose.)
 
 INSIGHTS: Must reference D1 and D9 placements (Rahu, Saturn, Jupiter, Moon)
 

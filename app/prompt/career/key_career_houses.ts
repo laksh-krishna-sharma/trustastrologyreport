@@ -50,7 +50,7 @@ Then, take the user through a chronological narrative — Rahu Mahadasha (phases
 
 Include age markers and years for clarity.
 
-In the final section, give a detailed summary in the following format:
+In the final section, give a detailed summary in the following format: 
 
 - Rahu Mahadasha...
 
@@ -62,7 +62,7 @@ In the final section, give a detailed summary in the following format:
 
 Tone and Style:
 
-Paragraph style, no bullet points except in summary
+* Summary must be in points format, not prose.
 
 Write like a real person, not AI
 

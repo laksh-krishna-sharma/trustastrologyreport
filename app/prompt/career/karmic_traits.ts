@@ -68,6 +68,7 @@ Then add 1 strong paragraph describing how this trio explains:
 * Do not use “Guru Ji” or devotional speech. This is for professional clients.
 * Every paragraph must connect logically to planetary placements.
 * NEVER compress output. Write this as if it’s going directly into a printed report.
+* Summary must be in points format, not prose.
 
 ### In the end include summary.
 

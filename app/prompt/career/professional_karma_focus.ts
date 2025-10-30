@@ -74,7 +74,7 @@ Final Insight – From Earthbound Legacy to Elevated Dharma
 
 (Conclude with a powerful, reflective paragraph about his life arc: building → leading → teaching → serving. No pointers.)
 
-Summary – Your Long‑Term Career Karma at a Glance
+* Summary must be in points format, not prose.
 
 Taurus in 10th = Steady, value‑driven career foundation.
 

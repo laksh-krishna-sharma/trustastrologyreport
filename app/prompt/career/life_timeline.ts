@@ -67,7 +67,7 @@ Then cover these in separate headers:
    - Show how his 40s and 50s are ideal for leadership roles, business mentoring, global scaling, legacy-making.
 
 8. summary  
-   Use this format:
+   Use this format: (bullet points, not prose)
    • 10th House in Taurus brings stable career dharma focused on value, legacy, and grounded success.  
    • Sun + Mercury = born to lead, think, and communicate clearly.  
    • Post-40 is the prime phase for external impact and internal clarity.
@@ -104,7 +104,7 @@ D10 Chart:
 ### Don't forget to use the above birth details to personalize the report. But do not write the birth details section again in the output.
 
 
-### NOW START WRITING THE OUTPUT in HTML FORMAT WITH PROPER <h4>, <p>, <ul>, <li> TAGS FOR HEADINGS, PARAGRAPHS, AND LISTS RESPECTIVELY. DO NOT WRITE MARKDOWN OR PLAIN TEXT.
+### NOW START WRITING THE OUTPUT in HTML FORMAT WITH PROPER <h4>, <p>, <ul>, <li> TAGS FOR HEADINGS, PARAGRAPHS, AND LISTS RESPECTIVELY. DO NOT WRITE MARKDOWN, EMOJIS AND ** ** OR PLAIN TEXT..
 `;
 
 export default life_timeline_prompt;

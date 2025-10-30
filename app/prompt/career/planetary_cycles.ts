@@ -63,7 +63,7 @@ Tie in how Venus as 10th lord in 9th house (Aries) creates dharmic ambition, des
 
 Explain their relationship with purpose, ownership, control, and legacy
 
-End the section with a flowing summary paragraph that says something like:
+End the section with a flowing point wise summary that says something like:
 “Your chart doesn’t show someone looking for easy wins. It shows someone who needs to feel emotionally aligned with what they do — or they begin to question the whole journey. This inner compass is your strength, but also your challenge.”
 
 CHART DETAILS TO USE

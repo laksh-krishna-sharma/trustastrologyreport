@@ -94,7 +94,7 @@ Avoid robotic tone, avoid “as an astrologer I see…” — write as if it's a
 
 Avoid point-wise format. Use full paragraphs only.
 
-At the end, include a summary section summarizing 6–7 key takeaways using bullet points.
+At the end, include a summary section summarizing 6–7 key takeaways using points wise.
 
 No reference to other segments. This is a standalone piece.
 
