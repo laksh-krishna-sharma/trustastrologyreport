@@ -116,7 +116,27 @@
 }
 
 .energy-card--stat {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    gap: 0.8rem;
+    flex-direction: row;
+}
+
+.energy-card__content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    flex: 1;
     align-items: flex-start;
+}
+
+.energy-card__image {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    flex-shrink: 0;
+    margin-left: auto;
 }
 
 .energy-card__title {

@@ -1,11 +1,15 @@
 import { readUtf8 } from './io';
 import { renderKeyValueRows, renderTimelineRows, buildShadbalaInsights, formatLuckyNumbers, sanitizeBulletPrefix, escapeHtml } from './render';
+import { toDataUrl } from './io';
 
 export function loadAstrologicalDetails(astroDetails: any, headerImageDataUrl: string): string {
   if (!astroDetails) return '';
 
   const htmlPath = 'app/lib/career/astrological_details/astrological_details.html';
   let content = readUtf8(htmlPath);
+
+  const sunImageDataUrl = toDataUrl('public/sun.png');
+  const venusImageDataUrl = toDataUrl('public/venus.png');
 
   const staticSection = astroDetails.static ?? {};
   const dailySection = astroDetails.daily ?? {};
@@ -62,7 +66,9 @@ export function loadAstrologicalDetails(astroDetails: any, headerImageDataUrl: s
     .replace('{{core_rows}}', identityRows)
     .replace('{{daily_rows}}', dailyRows)
     .replace('{{mahadasha_rows}}', mahadashaRows)
-    .replace('{{antardasha_rows}}', antardashaRows);
+    .replace('{{antardasha_rows}}', antardashaRows)
+    .replace('{{sun_image}}', sunImageDataUrl)
+    .replace('{{venus_image}}', venusImageDataUrl);
 
   const shadbalaInsights = buildShadbalaInsights(staticSection.shadBala?.total_balas);
 
