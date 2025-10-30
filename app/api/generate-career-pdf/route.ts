@@ -53,10 +53,68 @@ export async function POST(request: NextRequest) {
       astavargaChartImage,
     };
 
-    const coverImageDataUrl = await toDataUrl('public/coverpage.png');
-    const headerImageDataUrl = await toDataUrl('public/header.png');
+    const coverImageDataUrl = toDataUrl('public/coverpage.png');
+    const headerImageDataUrl = toDataUrl('public/header.png');
+    const [
+      birthImprintModule,
+      karmicTraitsModule,
+      lifeTimelineModule,
+      planetaryCyclesModule,
+      majorLifeShiftsModule,
+      keyCareerHousesModule,
+      guidingPlanetsModule,
+      professionalKarmaFocusModule,
+      recommendedCareerModule,
+      practicalRolesUpayasModule,
+      alignmentGuidanceModule,
+      rareYogasModule
+    ] = await Promise.all([
+      import('../../agent/career/birth_imprint_agent'),
+      import('../../agent/career/karmic_traits_agent'),
+      import('../../agent/career/life_timeline_agent'),
+      import('../../agent/career/planetary_cycles_agent'),
+      import('../../agent/career/major_life_shifts_agent'),
+      import('../../agent/career/key_career_houses_agent'),
+      import('../../agent/career/guiding_planets_agent'),
+      import('../../agent/career/professional_karma_focus_agent'),
+      import('../../agent/career/recommended_career_agent'),
+      import('../../agent/career/practical_roles_upayas_agent'),
+      import('../../agent/career/alignment_guidance_agent'),
+      import('../../agent/career/rare_yogas_agent')
+    ]);
 
-    const { html: fullHtml, css: cssContent } = assemblePages(pageData, headerImageDataUrl, coverImageDataUrl, chartImages);
+    const birthImprintHtml = (birthImprintModule.default ?? '') as string;
+    const karmicTraitsHtml = (karmicTraitsModule.default ?? '') as string;
+    const lifeTimelineHtml = (lifeTimelineModule.default ?? '') as string;
+    const planetryCyclesHtml = (planetaryCyclesModule.default ?? '') as string;
+    const majorLifeShiftsHtml = (majorLifeShiftsModule.default ?? '') as string;
+    const keyCareerHousesHtml = (keyCareerHousesModule.default ?? '') as string;
+    const guidingPlanetsHtml = (guidingPlanetsModule.default ?? '') as string;
+    const professionalKarmaFocusHtml = (professionalKarmaFocusModule.default ?? '') as string;
+    const recommendedCareerHtml = (recommendedCareerModule.default ?? '') as string;
+    const practicalRolesUpayasHtml = (practicalRolesUpayasModule.default ?? '') as string;
+    const alignmentGuidanceHtml = (alignmentGuidanceModule.default ?? '') as string;
+    const rareYogasHtml = (rareYogasModule.default ?? '') as string;
+
+
+    const { html: fullHtml, css: cssContent } = assemblePages(
+      pageData,
+      headerImageDataUrl,
+      coverImageDataUrl,
+      chartImages,
+      birthImprintHtml,
+      karmicTraitsHtml,
+      lifeTimelineHtml,
+      planetryCyclesHtml,
+      majorLifeShiftsHtml,
+      keyCareerHousesHtml,
+      guidingPlanetsHtml,
+      professionalKarmaFocusHtml,
+      recommendedCareerHtml,
+      practicalRolesUpayasHtml,
+      alignmentGuidanceHtml,
+      rareYogasHtml
+    );
 
     // Inline CSS into HTML
     const finalHtml = fullHtml.replace('<link rel="stylesheet" href="./pdf.css">', `<style>${cssContent}</style>`);

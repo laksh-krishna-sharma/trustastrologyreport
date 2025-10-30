@@ -84,7 +84,19 @@ export function assemblePages(
   data: PageData,
   headerImageDataUrl: string,
   coverImageDataUrl: string,
-  chartImages: Record<string, string>
+  chartImages: Record<string, string>,
+  birthImprintHtml: string,
+  karmicTraitsHtml: string,
+  lifeTimelineHtml: string,
+  planetryCyclesHtml: string,
+  majorLifeShiftsHtml: string,
+  keyCareerHousesHtml: string,
+  guidingPlanetsHtml: string,
+  professionalKarmaFocusHtml: string,
+  recommendedCareerHtml: string,
+  practicalRolesUpayasHtml: string,
+  alignmentGuidanceHtml: string,
+  rareYogasHtml: string
 ): { html: string; css: string } {
   const css = loadCssBundle(headerImageDataUrl, coverImageDataUrl);
   const disclaimer = loadDisclaimer(headerImageDataUrl);
@@ -92,7 +104,21 @@ export function assemblePages(
   const astro = loadAstrologicalDetails(data.astroDetails, headerImageDataUrl);
   const charts = loadHoroscopeCharts(headerImageDataUrl, chartImages);
   const astavarga = loadAstavargaChart(headerImageDataUrl, data.astavargaChartImage);
-  const chapter610 = loadChapter610(headerImageDataUrl);
+  const chapter610 = loadChapter610(
+    headerImageDataUrl,
+    birthImprintHtml,
+    karmicTraitsHtml,
+    lifeTimelineHtml,
+    planetryCyclesHtml,
+    majorLifeShiftsHtml,
+    keyCareerHousesHtml,
+    guidingPlanetsHtml,
+    professionalKarmaFocusHtml,
+    recommendedCareerHtml,
+    practicalRolesUpayasHtml,
+    alignmentGuidanceHtml,
+    rareYogasHtml
+  );
   const html = loadMainPage(data, disclaimer, toc, astro, charts, astavarga, chapter610);
 
   return { html, css };

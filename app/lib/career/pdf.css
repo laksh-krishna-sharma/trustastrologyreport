@@ -7,20 +7,24 @@ body {
     margin: 0;
     padding: 0;
     background: none;
-    counter-reset: page-number;
 }
 
-.page {
-    width: 210mm;
-    height: 297mm;
-    page-break-after: always;
-    position: relative;
-    overflow: hidden;
-    counter-increment: page-number;
+/* For pages 1 to 8 */
+.page:nth-of-type(-n+8) {
+  width: 210mm;
+  height: 297mm;
+  page-break-after: always;
+  position: relative;
+  overflow: hidden;
+  /* counter-increment: page-number; */
 }
 
-.page:nth-of-type(-n+3) {
-    counter-increment: none;
+/* For page 9 and onwards */
+.page:nth-of-type(n+9) {
+  width: 210mm;
+  min-height: 297mm;
+  page-break-after: always;
+  position: relative;
 }
 
 /* Full-page cover image */
@@ -31,7 +35,6 @@ body {
     background-position: center;
     background-repeat: no-repeat;
 }
-
 
 .content {
     position: relative;
@@ -52,30 +55,4 @@ body {
 .info-section p {
     margin: 0.25rem 0;
     font-size: 16pt;
-}
-
-.footer {
-    text-align: center;
-    font-size: 10pt;
-    color: #7f8c8d;
-    margin-top: 2rem;
-    /* move to bottom of page */
-    position: absolute;
-    bottom: 1rem;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-.page::after {
-    content: counter(page-number, decimal-leading-zero);
-    position: absolute;
-    bottom: 2rem;
-    right: 1.5rem;
-    font-size: 12pt;
-    color: #7f8c8d;
-    font-weight: 600;
-}
-
-.page:nth-of-type(-n+3)::after {
-    content: none;
 }
