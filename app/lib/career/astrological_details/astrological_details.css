@@ -31,6 +31,16 @@
     gap: 0.75rem;
 }
 
+.astro-section-container{
+    margin-top: 40px;
+}
+
+.astro-section:not(:last-child) {
+    padding-bottom: 0;
+    border-bottom: none;
+    margin-bottom: 6rem;
+}
+
 .astro-section h3 {
     display: flex;
     align-items: center;
@@ -82,6 +92,7 @@
 }
 
 .energy-section {
+    margin-top: 40px;
     gap: 1.4rem;
 }
 
@@ -94,7 +105,8 @@
 
 .energy-card {
     position: relative;
-    padding: 1.3rem 1.4rem;
+    padding: 1rem 1rem;
+    padding-right: 0.1rem;
     border-radius: 16px;
     background: linear-gradient(135deg, rgba(44, 62, 80, 0.08), rgba(44, 62, 80, 0.02));
     box-shadow: 0 12px 28px rgba(31, 45, 61, 0.08);
@@ -116,19 +128,14 @@
 }
 
 .energy-card--stat {
-    align-items: center;
     display: flex;
-    justify-content: space-between;
-    gap: 0.8rem;
-    flex-direction: row;
+    flex-direction: column;
 }
 
 .energy-card__content {
     display: flex;
-    flex-direction: column;
-    gap: 0.35rem;
-    flex: 1;
-    align-items: flex-start;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 .energy-card__image {
@@ -136,7 +143,8 @@
     height: 80px;
     object-fit: contain;
     flex-shrink: 0;
-    margin-left: auto;
+    grid-column: 1 / -1;
+    justify-self: end;
 }
 
 .energy-card__title {
@@ -152,7 +160,11 @@
     line-height: 1.55;
     color: #1f2d3d;
 }
-
+.energy-card__content_name {
+    display: flex;
+    flex-direction: row;
+    gap: 212px;
+}
 .energy-card__label {
     font-size: 10pt;
     letter-spacing: 0.18em;
@@ -179,7 +191,13 @@
 }
 
 .astro-grid--pill {
-    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    /* grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); */
+    margin-top: 40px;
+}
+
+.energy-card__sub_content{
+    display: flex;
+    flex-direction: column;
 }
 
 .astro-pill {
@@ -261,4 +279,86 @@
     font-size: 12pt;
     color: #5c6b7a;
     background: rgba(47, 72, 88, 0.06);
+}
+
+/* --- Dasha Cycles Styling --- */
+.dasha-group {
+    margin-bottom: 1.8rem;
+    padding: 1.2rem 1.4rem;
+    background: linear-gradient(135deg, rgba(44, 62, 80, 0.06), rgba(44, 62, 80, 0.02));
+    border-left: 4px solid rgba(78, 205, 196, 0.5);
+    border-radius: 8px;
+}
+
+.mahadasha-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.8rem;
+    border-bottom: 2px solid rgba(47, 72, 88, 0.15);
+}
+
+.dasha-label {
+    font-size: 10pt;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #5a7188;
+    font-weight: 600;
+}
+
+.dasha-name {
+    font-size: 16pt;
+    font-weight: 700;
+    color: #1f2d3d;
+    flex-grow: 1;
+}
+
+.dasha-period {
+    font-size: 11pt;
+    color: #4f6f88;
+    white-space: nowrap;
+}
+
+.dasha-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.06);
+}
+
+.dasha-table thead tr {
+    background: rgba(47, 72, 88, 0.08);
+}
+
+.dasha-table thead th {
+    padding: 0.6rem 1rem;
+    font-size: 11pt;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #415163;
+    text-align: left;
+}
+
+.dasha-table tbody tr:nth-child(odd) {
+    background: rgba(247, 250, 252, 0.9);
+}
+
+.dasha-table tbody tr:nth-child(even) {
+    background: rgba(255, 255, 255, 0.96);
+}
+
+.dasha-table tbody td {
+    padding: 0.65rem 1rem;
+    font-size: 12pt;
+    color: #1f2d3d;
+    border-bottom: 1px solid rgba(47, 72, 88, 0.08);
+}
+
+.dasha-table tbody tr:last-child td {
+    border-bottom: none;
 }

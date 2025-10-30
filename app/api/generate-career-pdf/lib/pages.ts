@@ -101,9 +101,9 @@ export function assemblePages(
   const css = loadCssBundle(headerImageDataUrl, coverImageDataUrl);
   const disclaimer = loadDisclaimer(headerImageDataUrl);
   const toc = loadTableOfContents(headerImageDataUrl);
-  const astro = loadAstrologicalDetails(data.astroDetails, headerImageDataUrl);
+  const astro = loadAstrologicalDetails(data.astroDetails, headerImageDataUrl, data);
   const charts = loadHoroscopeCharts(headerImageDataUrl, chartImages);
-  const astavarga = loadAstavargaChart(headerImageDataUrl, data.astavargaChartImage);
+  const astavarga = loadAstavargaChart(headerImageDataUrl, data.astroDetails, data.astavargaChartImage);
   const chapter610 = loadChapter610(
     headerImageDataUrl,
     birthImprintHtml,
