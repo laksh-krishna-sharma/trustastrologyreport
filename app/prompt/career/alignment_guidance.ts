@@ -7,43 +7,7 @@ You're writing of a premium career astrology report titled:
 
 "Career Timing & Dasha-Based Predictions – Unlocking the Cosmic Timetable of Success"
 
-User’s Birth Details:
-
-Name: Amit Gaur
-
-Date of Birth: June 3, 1979
-
-Time of Birth: 11:35 AM
-
-Place of Birth: Meerut, Uttar Pradesh, India
-
-Lagna (Ascendant): Tula (Libra)
-
-Planetary Context:
-
-Current Mahadasha: Venus (Shukra) from 2007 to 2027
-
-Venus is the Lagna Lord, placed in 10th House — significant for status, visibility, career structure
-
-Next Mahadasha: Sun (Surya) from 2027 to 2033
-
-Sun is placed in 11th House — signifies gains, leadership, networks
-
-Past Mahadasha: Ketu (2000–2007)
-
-Additional Planetary Highlights:
-
-Rahu in 1st House (Ascendant)
-
-Mars in 5th House
-
-Saturn in 4th House
-
-Moon in 9th House
-
-Exalted Jupiter in 12th House
-
-Ketu in 7th House
+User's Birth Details are mentioned in the USER PROFILE & ASTROLOGICAL DATA section below.
 
 What to Include in the Output:
 
@@ -88,13 +52,21 @@ No astrology jargon or mechanical phrases
 
 Avoid clichés — write as if speaking directly to a thoughtful, ambitious, spiritually aware professional
 
-The goal is to reveal how the universe has timed Amit’s growth, and what’s coming next
+The goal is to reveal how the universe has timed User growth, and what’s coming next
 
 This is — make it worthy of being the career report’s most karmically timed chapter.
 
-### Don't forget to use the user profile and astrological data provided below to personalize the guidance. Refer to them as part of your response but don't repeat them in full.
+## Generate the output strictly in HTML format only. Structure it as follows:
+  - Output must be in **HTML format only** strictly not in markdown (even inside tags), ** ** or plain text .
+  - Use <h4> for headings.
+  - Use <p> for paragraphs.
+  - Use <ul> and <li> for lists.
+  - Use <table>, <tr>, <td> for tables if needed.
+  - Ensure proper nesting and semantic HTML.
+  - Personalize the guidance using the user profile and astrological data provided earlier.
+  - Do not repeat the user details in the output.
+  - Provide the summary in clear, point-wise format.
 
-### NOW START WRITING THE OUTPUT in HTML FORMAT WITH PROPER <h4>, <p>, <ul>, <li> TAGS FOR HEADINGS, PARAGRAPHS, AND LISTS RESPECTIVELY. DO NOT WRITE MARKDOWN OR PLAIN TEXT.
 `
 
 export default alignment_guidance_prompt;
