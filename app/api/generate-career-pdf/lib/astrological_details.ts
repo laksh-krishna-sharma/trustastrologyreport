@@ -67,11 +67,12 @@ export function loadAstrologicalDetails(astroDetails: any, headerImageDataUrl: s
             justify-content:center;
             width:100%;
             max-width:450px;
-            margin:1rem auto 2rem;
+            margin:1.4rem auto 2rem;
             padding:0;
+            gap:1.4rem;
           ">
           <h3 style="
-            font-size:1.1rem;
+            font-size:1.4rem !important;
             font-weight:700;
             font-size:16px;
             text-transform:uppercase;
