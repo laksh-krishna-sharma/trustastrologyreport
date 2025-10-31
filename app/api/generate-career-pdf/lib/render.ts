@@ -101,3 +101,65 @@ export const buildShadbalaInsights = (values: JsonRecord | undefined): ShadbalaI
     averageValue: String(avg),
   };
 };
+
+export const renderDashaCycles = (dashas: Array<JsonRecord> | undefined): string => {
+  if (!dashas || !dashas.length) {
+    return '<div class="astro-empty">Dasha cycles will appear here once available.</div>';
+  }
+
+  return dashas
+    .map((dasha) => {
+      const mahadasha = dasha.mahadasha as JsonRecord | undefined;
+      const antardasha = dasha.antardasha as Array<JsonRecord> | undefined;
+
+      if (!mahadasha) return '';
+
+      const mahaName = escapeHtml(mahadasha.mahadasha);
+      const mahaStart = escapeHtml(mahadasha.startDate);
+      const mahaEnd = escapeHtml(mahadasha.endDate);
+
+      let html = `
+        <div class="dasha-group">
+          <div class="mahadasha-header">
+            <span class="dasha-label">Mahadasha:</span>
+            <span class="dasha-name">${mahaName}</span>
+            <span class="dasha-period">${mahaStart} to ${mahaEnd}</span>
+          </div>
+      `;
+
+      if (antardasha && antardasha.length > 0) {
+        html += `
+          <table class="dasha-table">
+            <thead>
+              <tr>
+                <th scope="col">Antardasha</th>
+                <th scope="col">Starts</th>
+                <th scope="col">Ends</th>
+              </tr>
+            </thead>
+            <tbody>
+        `;
+
+        html += antardasha
+          .map(
+            (antarEntry) => `
+              <tr>
+                <td>${escapeHtml(antarEntry.antardasha)}</td>
+                <td>${escapeHtml(antarEntry.startDate)}</td>
+                <td>${escapeHtml(antarEntry.endDate)}</td>
+              </tr>
+            `
+          )
+          .join('');
+
+        html += `
+            </tbody>
+          </table>
+        `;
+      }
+
+      html += `</div>`;
+      return html;
+    })
+    .join('');
+};

@@ -101,7 +101,7 @@ D10 Chart:
   - 10th House: Mercury  
   - Moon in Pisces
 
-### Don't forget to use the above birth details to personalize the report. But do not write the birth details section again in the output.
+### Don't forget to use the above birth details to personalize the report. But do not write the birth details seprately in the output.
 
 
 ### NOW START WRITING THE OUTPUT in HTML FORMAT WITH PROPER <h4>, <p>, <ul>, <li> TAGS FOR HEADINGS, PARAGRAPHS, AND LISTS RESPECTIVELY. DO NOT WRITE MARKDOWN, EMOJIS AND ** ** OR PLAIN TEXT..

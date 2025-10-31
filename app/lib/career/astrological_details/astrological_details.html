@@ -8,19 +8,22 @@
                 <img src="{{header_image}}" alt="Header" class="header-image right" />
             </div>
 
-            <section class="astro-section">
-                <h3>Core Cosmic Identity</h3>
-                <div class="astro-grid">
-                    {{core_rows}}
-                </div>
-            </section>
+            <div class="astro-section-container">
+                <section class="astro-section">
+                    <h3>Personal Information</h3>
+                    <div class="astro-grid">
+                        {{user_details_rows}}
+                    </div>
+                </section>
 
-            <section class="astro-section">
-                <h3>Daily Catalysts</h3>
-                <div class="astro-grid">
-                    {{daily_rows}}
-                </div>
-            </section>
+                <section class="astro-section">
+                    <h3>Core Cosmic Identity</h3>
+                    <div class="astro-grid">
+                        {{core_rows}}
+                        {{lucky_rows}}
+                    </div>
+                </section>
+            </div>
         </div>
     </div>
 </div>
@@ -36,35 +39,8 @@
             </div>
 
             <section class="astro-section">
-                <h3>Mahadasha Horizon</h3>
-                <table class="astro-table">
-                    <thead>
-                        <tr>
-                            <th scope="col">Mahadasha</th>
-                            <th scope="col">Starts</th>
-                            <th scope="col">Ends</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {{mahadasha_rows}}
-                    </tbody>
-                </table>
-            </section>
-
-            <section class="astro-section">
-                <h3>Upcoming Antardasha</h3>
-                <table class="astro-table">
-                    <thead>
-                        <tr>
-                            <th scope="col">Antardasha</th>
-                            <th scope="col">Starts</th>
-                            <th scope="col">Ends</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {{antardasha_rows}}
-                    </tbody>
-                </table>
+                <h3>Dasha Cycles</h3>
+                {{dasha_cycles}}
             </section>
         </div>
     </div>
@@ -84,35 +60,41 @@
                 <h3>Shad Bala Strength</h3>
 
                 <div class="energy-highlights">
-                    <div class="energy-card energy-card--wide">
-                        <span class="energy-card__title">Energy Synopsis</span>
-                        <p class="energy-card__text">{{shadbala_summary}}</p>
+
+                    <div class="energy-card energy-card--stat">
+                        <div class="energy-card__content">
+                            <div class="energy-card__sub_content">
+                                <span class="energy-card__label">Strongest Planet</span>
+                                <span class="energy-card__value">{{shadbala_peak_value}}</span>
+                            </div>
+                            <img src="{{sun_image}}" alt="Sun" class="energy-card__image" />
+                        </div>
+                        <div class="energy-card__content_name">
+                            <!-- <span class="energy-card__caption">Virupas</span> -->
+                            <span class="energy-card__caption">{{shadbala_peak}}</span>
+                        </div>
+
                     </div>
 
                     <div class="energy-card energy-card--stat">
-                        <span class="energy-card__label">Strongest Flow</span>
-                        <span class="energy-card__value">{{shadbala_peak_value}}</span>
-                        <span class="energy-card__caption">{{shadbala_peak}}</span>
-                    </div>
-
-                    <div class="energy-card energy-card--stat">
-                        <span class="energy-card__label">Gentle Current</span>
-                        <span class="energy-card__value">{{shadbala_low_value}}</span>
-                        <span class="energy-card__caption">{{shadbala_low}}</span>
-                    </div>
-
-                    <div class="energy-card energy-card--stat">
-                        <span class="energy-card__label">Average Momentum</span>
-                        <span class="energy-card__value">{{shadbala_average}}</span>
-                        <span class="energy-card__caption">Across highlighted planets</span>
+                        <div class="energy-card__content">
+                            <div class="energy-card__sub_content">
+                                <span class="energy-card__label">Weakest Planet</span>
+                                <span class="energy-card__value">{{shadbala_low_value}}</span>
+                            </div>
+                            <img src="{{venus_image}}" alt="Venus" class="energy-card__image" />
+                        </div>
+                        <div class="energy-card__content_name">
+                            <!-- <span class="energy-card__caption">Virupas</span> -->
+                            <span class="energy-card__caption">{{shadbala_low}}</span>
+                        </div>
                     </div>
                 </div>
-
-                <div class="energy-divider"></div>
 
                 <div class="astro-grid astro-grid--pill">
                     {{shadbala_rows}}
                 </div>
+                    {{astavarga_chart_block}}
             </section>
         </div>
     </div>

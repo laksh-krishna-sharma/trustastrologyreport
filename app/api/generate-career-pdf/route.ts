@@ -16,7 +16,8 @@ export async function POST(request: NextRequest) {
     }
 
     const potentialRecord = (payload.astro_record ?? undefined) as JsonRecord | undefined;
-    const fallbackRecord: JsonRecord | undefined = potentialRecord ?? (payload.astro ? payload : undefined);
+    // For flat JSON, use payload itself as fallback
+    const fallbackRecord: JsonRecord | undefined = potentialRecord ?? payload;
 
     const resolvedFields = {
       name: payload.name ?? fallbackRecord?.name,
@@ -32,9 +33,28 @@ export async function POST(request: NextRequest) {
       }
     }
 
-  const astroDetails: JsonRecord | undefined = payload.astro ?? fallbackRecord?.astro;
-  const chartImages: Record<string, string> = (astroDetails?.charts ?? payload.chart_images ?? {}) as Record<string, string>;
-  const astavargaChartImage = (astroDetails?.astavarga_chart_image ?? payload.astavarga_chart_image) as string | undefined;
+  // Handle both nested (payload.astro) and flat structure (direct payload)
+  let astroDetails: JsonRecord | undefined = payload.astro ?? fallbackRecord?.astro;
+  if (!astroDetails) {
+    // If astro is not nested, use the entire payload as astroDetails
+    astroDetails = payload;
+  }
+
+  // Build chartImages from various possible sources
+  const chartImages: Record<string, string> = {};
+  if (astroDetails?.charts) {
+    Object.assign(chartImages, astroDetails.charts);
+  }
+  if (payload.chart_images) {
+    Object.assign(chartImages, payload.chart_images);
+  }
+  // Support flat structure with d1_img, d2_img, d9_img, d10_img at root
+  if (payload.d1_img) chartImages['d1_img'] = payload.d1_img;
+  if (payload.d2_img) chartImages['d2_img'] = payload.d2_img;
+  if (payload.d9_img) chartImages['d9_img'] = payload.d9_img;
+  if (payload.d10_img) chartImages['d10_img'] = payload.d10_img;
+
+  const astavargaChartImage = (astroDetails?.astavarga_chart_image ?? payload.astavarga_chart_image ?? payload.ashtakvarga_img) as string | undefined;
 
     const name = resolvedFields.name as string;
     const dateOfBirth = resolvedFields.date_of_birth as string;
