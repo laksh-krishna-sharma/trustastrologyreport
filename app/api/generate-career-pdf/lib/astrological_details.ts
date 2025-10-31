@@ -52,6 +52,62 @@ export function loadAstrologicalDetails(astroDetails: any, headerImageDataUrl: s
     ]
   );
 
+  const astavargaChartImage =
+    staticSection.astavarga_chart_image ??
+    staticSection.ashtakvarga_img ??
+    pageData?.astavargaChartImage ??
+    pageData?.astavarga_chart_image;
+
+  const astavargaChartBlock = astavargaChartImage
+    ? `<div class="astavarga-inline__frame"
+          style="
+            display:flex;
+            flex-direction:column;
+            align-items:center;
+            justify-content:center;
+            width:100%;
+            max-width:450px;
+            margin:1rem auto 2rem;
+            padding:0;
+          ">
+          <h3 style="
+            font-size:1.1rem;
+            font-weight:700;
+            font-size:16px;
+            text-transform:uppercase;
+            color:#1f2a44;
+            letter-spacing:1px;
+            margin-bottom:0.8rem;
+          ">
+            Astavarga Chart
+          </h3>
+          <img src="${escapeHtml(astavargaChartImage)}"
+              alt="Astavarga Chart"
+              class="astavarga-inline__image"
+              style="
+                width:100%;
+                height:auto;
+                object-fit:contain;
+                display:block;
+                box-shadow:0 2px 10px rgba(0,0,0,0.05);
+                border-radius:6px;
+              " />
+      </div>`
+    : `<div class="astro-empty"
+          style="
+            text-align:center;
+            padding:2rem;
+            margin:2rem auto;
+            width:100%;
+            max-width:450px;
+            border:1px dashed #ccc;
+            border-radius:8px;
+            color:#555;
+            font-style:italic;
+          ">
+          Astavarga chart will appear here once available.
+      </div>`;
+
   // Render nested dasha cycles from dashas array
   const dashaCyclesHtml = renderDashaCycles(staticSection.dashas);
 
@@ -59,7 +115,8 @@ export function loadAstrologicalDetails(astroDetails: any, headerImageDataUrl: s
     .replace('{{user_details_rows}}', userDetailsRows)
     .replace('{{core_rows}}', identityRows)
     .replace('{{lucky_rows}}', luckyRows)
-    .replace('{{dasha_cycles}}', dashaCyclesHtml)
+  .replace('{{dasha_cycles}}', dashaCyclesHtml)
+  .replace('{{astavarga_chart_block}}', astavargaChartBlock)
     .replace('{{sun_image}}', sunImageDataUrl)
     .replace('{{venus_image}}', venusImageDataUrl);
 

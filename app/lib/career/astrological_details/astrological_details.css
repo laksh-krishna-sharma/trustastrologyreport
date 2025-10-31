@@ -1,8 +1,8 @@
 /* Astrological details styling */
 .astro-content {
-    padding: 1.8rem 2rem 2.4rem;
+    padding: 1rem 2rem 2.4rem;
     min-height: calc(100% - 3rem);
-    margin: 1.5rem;
+    margin: 1rem;
     display: flex;
     flex-direction: column;
     gap: 1.2rem;
@@ -92,7 +92,7 @@
 }
 
 .energy-section {
-    margin-top: 40px;
+    margin-top: 30px;
     gap: 1.4rem;
 }
 
@@ -180,7 +180,7 @@
 }
 
 .energy-card__caption {
-    font-size: 12pt;
+    font-size: 14pt;
     color: #345067;
 }
 
