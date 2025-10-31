@@ -4,33 +4,7 @@ This segment must be long-form, intelligent, emotionally resonant, and logically
 
 User Details:
 
-Name: Amit Gaur
-
-DOB: 3 June 1979
-
-Time: 11:35 AM
-
-Place: Meerut, Uttar Pradesh, India
-
-Ascendant (Lagna): Leo (Simha)
-
-Key Placements:
-
-Moon, Saturn, Rahu in 1st house (Leo)
-
-Sun + Mercury in 10th house (Taurus)
-
-Mars + Venus in 9th house (Aries)
-
-Jupiter exalted in 12th house (Cancer)
-
-Ketu in 7th house (Aquarius)
-
-Current Mahadasha: Rahu (2009–2027)
-
-Upcoming Mahadasha: Jupiter (2027–2043)
-
-Significant Transit: Ashtama Shani (2014–2022)
+Provided in the user profile and astrological data section below.
 
 What to Include:
 
@@ -102,7 +76,7 @@ No mention of "Guru Ji," "our platform," or any self-reflection by the writer.
 
 Ensure every insight feels like it emerged directly from the user’s chart.
 
-### Don't forget to use the above birth details to personalize the report. But do not write the birth details section again in the output.
+### Don't forget to use the user profile and astrological data provided below to personalize the report. But do not write the birth details section again in the output.
 
 ### NOW START WRITING THE OUTPUT in HTML FORMAT WITH PROPER <h4>, <p>, <ul>, <li> TAGS FOR HEADINGS, PARAGRAPHS, AND LISTS RESPECTIVELY. DO NOT WRITE MARKDOWN OR PLAIN TEXT.
 `

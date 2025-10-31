@@ -5,9 +5,9 @@ Your task is to generate **Segment 1.1** of a user’s **60-page Premium Career 
 
 ### STRUCTURE & LENGTH GUIDANCE
 
-The Fire Within: Understanding Amit Gaur’s Life Signature
+The Fire Within: Understanding Your Life Signature
 
-Amit, this report is not just a document about planets. It’s a mirror — one that reflects your inner drive, your karmic rhythm, and the real reason your professional life moves the way it does. Every planet in your chart has played a role in shaping your identity, resilience, and ambition. And that story begins with the sign rising in the east when you were born — Leo.
+This report is not just a document about planets. It's a mirror — one that reflects your inner drive, your karmic rhythm, and the real reason your professional life moves the way it does. Every planet in your chart has played a role in shaping your identity, resilience, and ambition. And that story begins with the sign rising in the east when you were born.
 
 Leo Rising – A Soul Born to Be Seen  
 (Write 4–5 paragraphs describing Leo Ascendant’s role in shaping leadership style, visibility, inner confidence, emotional drive. Show how it affects work choices, restlessness in rigid roles, etc.)
@@ -45,30 +45,7 @@ Close this section with:
 - NEVER compress output. Write this as if it’s going directly into a printed report.
 
 
-Name: Amit Gaur
-DOB: 3 June 1979, 11:35 AM
-Place: Meerut, Uttar Pradesh, India
-Age: 46
-Gender: Male
-Ascendant (Lagna): Leo
-Moon Sign: Leo
-Nakshatra: Purva Phalguni
-Current Mahadasha: Rahu
-Current Antardasha: Moon
-Current Paryantardasha: Saturn
-Saturn Phase: Ashtama Shani (Saturn in 8th house)
-D1 Chart:
-  - 1st House (Lagna): Leo — contains Moon, Saturn, Rahu
-  - 10th House: Taurus — contains Sun, Mercury
-  - 9th House: Aries — contains Mars, Venus
-  - 12th House: Cancer — contains Jupiter
-D9 (Navamsa): Moon + Jupiter in Libra
-D10 (Dasamsa): Moon in Pisces, Mercury + Ketu in 10th
-Yogas: Anapha Yoga, Dhana Yoga, Kalpadruma Yoga, Chaamara Yoga
-Shad Bala:
-  - Sun: 688, Moon: 328, Saturn: 335
-
-### Don't forget to use the above birth details to personalize the report. But do not write the birth details section again in the output.
+### Don't forget to use the user profile and astrological data provided below to personalize the report. But do not write the birth details section again in the output.
 
 ### In the end include summary points wise.
 

@@ -4,6 +4,7 @@ import fs from 'fs';
 import path from 'path';
 import { toDataUrl } from './lib/io';
 import { assemblePages, PageData } from './lib/pages';
+import { extractUserDetails, setUserDetails } from '../../agent/lib/user_details';
 
 type JsonRecord = Record<string, any>;
 
@@ -14,6 +15,10 @@ export async function POST(request: NextRequest) {
     if (!payload || typeof payload !== 'object') {
       return NextResponse.json({ error: 'Invalid request body' }, { status: 400 });
     }
+
+    // Extract and store user details for agent access
+    const userDetails = extractUserDetails(payload);
+    setUserDetails(userDetails);
 
     const potentialRecord = (payload.astro_record ?? undefined) as JsonRecord | undefined;
     // For flat JSON, use payload itself as fallback

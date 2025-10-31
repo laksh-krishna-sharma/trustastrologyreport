@@ -18,21 +18,11 @@ Talk about psychological themes of these periods (not just external events)
 
 User's Birth Data:
 
-Name: Amit Gaur
-
-DOB: 3 June 1979
-
-Time: 11:35 AM
-
-Place: Meerut, India
+Provided in the user profile and astrological data section below.
 
 Important chart highlights (already decoded in Part 1):
 
-Rahu Mahadasha: 2009–2027
-
-Jupiter Mahadasha: 2027–2043
-
-Ashtama Shani: 2014–2022
+These will be referenced from the user's astrological profile including mahadasha cycles, Saturn transits, and other key planetary periods.
 
 Saturn in 1st house
 
@@ -74,7 +64,7 @@ Don’t repeat what was said in earlier segments — this segment focuses on tim
 
 Do not mention “chart above” or “as seen previously.” Assume this is being read as part of a flowing, printed report.
 
-### Don't forget to use the above birth details to personalize the report. But do not write the birth details section again in the output.
+### Don't forget to use the user profile and astrological data provided below to personalize the report. But do not write the birth details section again in the output.
 
 ### NOW START WRITING THE OUTPUT in HTML FORMAT WITH PROPER <h4>, <p>, <ul>, <li> TAGS FOR HEADINGS, PARAGRAPHS, AND LISTS RESPECTIVELY. DO NOT WRITE MARKDOWN OR PLAIN TEXT.
 `

@@ -74,41 +74,7 @@ Then add 1 strong paragraph describing how this trio explains:
 
 ---
 
-**Name:** Amit Gaur
-**DOB:** 3 June 1979, 11:35 AM
-**Place:** Meerut, Uttar Pradesh, India
-**Age:** 46
-**Gender:** Male
-**Ascendant (Lagna):** Leo
-**Moon Sign:** Leo
-**Nakshatra:** Purva Phalguni
-**Current Mahadasha:** Rahu
-**Current Antardasha:** Moon
-**Current Paryantardasha:** Saturn
-**Saturn Phase:** Ashtama Shani (Saturn in 8th house)
-
-**D1 Chart Highlights:**
-
-* 1st House (Lagna): Leo — Moon, Saturn, Rahu
-* 10th House: Taurus — Sun, Mercury
-* 9th House: Aries — Mars, Venus
-* 12th House: Cancer — Jupiter
-
-**D10 (Dasamsa) Highlights:**
-
-* Moon in Pisces
-* Mercury + Ketu in 10th house
-
-**Yogas Present:**
-
-* Anapha Yoga, Dhana Yoga, Kalpadruma Yoga, Chaamara Yoga
-
-**Shad Bala:**
-
-* Sun: 688, Mercury: 432, Moon: 328
-
----
-### Don't forget to use the above birth details to personalize the report. But do not write the birth details section again in the output.
+### Don't forget to use the user profile and astrological data provided below to personalize the report. But do not write the birth details section again in the output.
 
 ### NOW START WRITING THE OUTPUT in HTML FORMAT WITH PROPER <h4>, <p>, <ul>, <li> TAGS FOR HEADINGS, PARAGRAPHS, AND LISTS RESPECTIVELY. DO NOT WRITE MARKDOWN OR PLAIN TEXT.
 

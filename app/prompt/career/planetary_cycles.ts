@@ -68,47 +68,7 @@ End the section with a flowing point wise summary that says something like:
 
 CHART DETAILS TO USE
 
-Full Name: Amit Gaur
-DOB: 3 June 1979, 11:35 AM
-POB: Meerut, Uttar Pradesh, India
-Lagna: Leo
-Moon Sign: Leo
-Nakshatra: Purva Phalguni
-Current Mahadasha: Rahu
-Current Antardasha: Moon
-Saturn Phase: Ashtama Shani (8th house)
-
-Key Planetary Highlights:
-
-Lagna: Moon + Saturn + Rahu in Leo (1st House)
-
-10th House (Career): Taurus — Sun + Mercury
-
-9th House: Aries — Venus + Mars
-
-12th House: Cancer — Jupiter
-
-D10: Moon in Pisces, Mercury + Ketu in 10th
-
-D9: Moon + Jupiter in Libra
-
-Yogas: Dhana Yoga, Kalpadruma Yoga, Chaamara Yoga
-
-STYLE GUIDE
-
-Write 1500–1700 words minimum
-
-No bullet points — write full, natural paragraphs
-
-Do NOT use technical terms unless explained
-
-Tone should feel intelligent, reflective, and emotionally aware
-
-No fluff. Every paragraph must connect to actual chart placements
-
-Add a summary in Pointers
-
-### Don't forget to use the above birth details to personalize the report. But do not write the birth details section again in the output.
+### Don't forget to use the user profile and astrological data provided below to personalize the report. But do not write the birth details section again in the output.
 
 ### NOW START WRITING THE OUTPUT in HTML FORMAT WITH PROPER <h4>, <p>, <ul>, <li> TAGS FOR HEADINGS, PARAGRAPHS, AND LISTS RESPECTIVELY. DO NOT WRITE MARKDOWN OR PLAIN TEXT.
 
