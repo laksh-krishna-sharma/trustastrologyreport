@@ -1,7 +1,11 @@
 import llm from "../lib/llm.ts";
 import key_career_houses_prompt from "../../prompt/career/key_career_houses.ts";
+import { getFormattedUserDetailsForPrompt } from "../lib/user_details.ts";
 
-const result = await llm.invoke(key_career_houses_prompt);
+const userContext = getFormattedUserDetailsForPrompt();
+const enrichedPrompt = `${key_career_houses_prompt}\n\n### USER PROFILE & ASTROLOGICAL DATA\n${userContext}`;
+
+const result = await llm.invoke(enrichedPrompt);
 
 // Extract only the text content from the response
 const textContent = Array.isArray(result.content)

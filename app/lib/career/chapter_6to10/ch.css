@@ -16,7 +16,7 @@
 
 .chapter-content p {
     margin-bottom: 0.75rem;
-    font-size: 14pt;
+    font-size: 18pt;
     text-align: justify;
 }
 
@@ -25,7 +25,7 @@
 }
 
 .chapter-section h3 {
-    font-size: 16pt;
+    font-size: 20pt;
     margin-bottom: 0.5rem;
     color: #1a5276;
 }
@@ -40,6 +40,7 @@
 }
 .chapter-section p {
     padding-top: 1rem;
+    font-size: 18pt;
     overflow: hidden;
     orphans: 2;
     widows: 2;
@@ -47,16 +48,20 @@
 }
 
 .chapter-section h4 {
-    font-size: 15pt;
+    font-size: 19pt;
     padding-top: 1rem;
     color: #2874a6;
     orphans: 2;
     widows: 2;
     page-break-inside: avoid;
 }
+.chapter-section h5{
+    font-size: 17pt;
+}
 
 .chapter-content ul {
     margin-left: 1.5rem;
+    font-size: 18pt;
     margin-bottom: 1rem;
     /* orphans: 2;
     widows: 2;
@@ -66,7 +71,7 @@
 
 .chapter-content li {
     margin-bottom: 0.5rem;
-    font-size: 14pt;
+    font-size: 18pt;
     /* orphans: 2;
     widows: 2;
     page-break-inside: avoid; */
